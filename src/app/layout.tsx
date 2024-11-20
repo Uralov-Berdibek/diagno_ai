@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         alt: 'AI Tibbiy Diagnostika',
       },
     ],
-    url: 'https://yourwebsite.com',
+    url: 'https://ai-diagno.netlify.app',
     type: 'website',
   },
   twitter: {
