@@ -94,7 +94,7 @@ export function HeroSection() {
         <div className={'container relative mt-16'}>
           <h1
             className={
-              'text-8xl md:text-[168px] md:leading-none font-semibold bg-white tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,0.5))] bg-clip-text text-transparent text-center'
+              'text-6xl md:text-[168px] md:leading-none font-semibold bg-white tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,0.5))] bg-clip-text text-transparent text-center'
             }
           >
             Diagno AI

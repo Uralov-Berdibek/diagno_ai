@@ -5,9 +5,9 @@ import SiteLogo from '@/assets/logo.svg';
 import { CodeXml, Feather, MenuIcon, Newspaper, Wallet2 } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
-import { ActionButton } from '@/components/action-button';
+import { UserButton } from '@clerk/nextjs';
 
-export default function SiteHeader() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -18,7 +18,7 @@ export default function SiteHeader() {
               'flex items-center justify-between md:border md:p-2.5 md:rounded-xl max-w-2xl mx-auto md:backdrop-blur '
             }
           >
-            <Link href={'/'}>
+            <Link href={'/dashboard/1236'}>
               <div className={'border size-10 rounded-lg inline-flex items-center justify-center'}>
                 <SiteLogo className={'size-8 h-auto'} />
               </div>
@@ -26,23 +26,21 @@ export default function SiteHeader() {
             <section className={'max-md:hidden'}>
               <nav className={'flex gap-8 items-center text-sm'}>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Features
+                  Dashboard
                 </Link>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Developers
+                  Doctors
                 </Link>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Pricing
+                  Contact
                 </Link>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Changelog
+                  About
                 </Link>
               </nav>
             </section>
             <section className={'flex max-md:gap-4 items-center'}>
-              <Link href={'/sign-in'}>
-                <ActionButton label={'Join Waitlist'} />
-              </Link>
+              <UserButton />
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger>
                   <MenuIcon className={'size-9 md:hidden hover:text-white/70 transition'} />
@@ -65,7 +63,7 @@ export default function SiteHeader() {
                         }
                       >
                         <Feather className={'size-6'} />
-                        Features
+                        Dashboard
                       </Link>
                       <Link
                         href={'#'}
@@ -74,7 +72,7 @@ export default function SiteHeader() {
                         }
                       >
                         <CodeXml className={'size-6'} />
-                        Developers
+                        Doctors
                       </Link>
                       <Link
                         href={'#'}
@@ -83,7 +81,7 @@ export default function SiteHeader() {
                         }
                       >
                         <Wallet2 className={'size-6'} />
-                        Pricing
+                        Contact
                       </Link>
                       <Link
                         href={'#'}
@@ -92,7 +90,7 @@ export default function SiteHeader() {
                         }
                       >
                         <Newspaper className={'size-6'} />
-                        Changelog
+                        About
                       </Link>
                     </nav>
                   </div>
