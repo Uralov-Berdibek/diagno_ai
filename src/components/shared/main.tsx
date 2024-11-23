@@ -16,11 +16,12 @@ const MainPage: React.FC = () => {
           />
           <div className='p-6 md:p-8 flex flex-col justify-center text-white w-full'>
             <h2 className='text-xl md:text-2xl font-semibold mb-4'>
-              Foydalanuvchi sog&apos;liq haqida ma'lumot berishi
+              Foydalanuvchi sog&apos;liq haqida ma&apos;lumot berishi
             </h2>
             <p className='mb-6'>
-              Foydalanuvchi matn orqali o'zining sog&apos;lig'i haqida batafsil ma&apos;lumotlarni
-              kiritishi mumkin. Ushbu ma&apos;lumotlar tahlil uchun serverga yuboriladi.
+              Foydalanuvchi matn orqali o'zining sog&apos;lig&apos;i haqida batafsil
+              ma&apos;lumotlarni kiritishi mumkin. Ushbu ma&apos;lumotlar tahlil uchun serverga
+              yuboriladi.
             </p>
             <button className='bg-[#1e8a8a] hover:bg-[#146a6a] px-4 py-2 rounded-md font-semibold transition'>
               Batafsil
