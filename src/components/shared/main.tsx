@@ -13,13 +13,15 @@ const MainPage: React.FC = () => {
             src='https://avatars.mds.yandex.net/i?id=430b68bb7d350c98ea63f56dc3d65bf83fddc499-8273295-images-thumbs&n=13'
             alt="Foydalanuvchi sog'liq haqida"
             className='h-[320px] w-auto object-cover p-6'
+            width={200}
+            height={320}
           />
           <div className='p-6 md:p-8 flex flex-col justify-center text-white w-full'>
             <h2 className='text-xl md:text-2xl font-semibold mb-4'>
               Foydalanuvchi sog&apos;liq haqida ma&apos;lumot berishi
             </h2>
             <p className='mb-6'>
-              Foydalanuvchi matn orqali o'zining sog&apos;lig&apos;i haqida batafsil
+              Foydalanuvchi matn orqali o&apos;zining sog&apos;lig&apos;i haqida batafsil
               ma&apos;lumotlarni kiritishi mumkin. Ushbu ma&apos;lumotlar tahlil uchun serverga
               yuboriladi.
             </p>
@@ -34,6 +36,8 @@ const MainPage: React.FC = () => {
             src='https://avatars.mds.yandex.net/i?id=5a39e175c4cf4603b40eb408e21dfaf428f8eaf5-7546740-images-thumbs&n=13'
             alt="Do'ktorlar tahlili"
             className='h-[320px] w-auto object-cover p-6'
+            width={200}
+            height={320}
           />
           <div className='p-6 md:p-8 flex flex-col justify-center text-white w-full'>
             <h2 className='text-xl md:text-2xl font-semibold mb-4'>
