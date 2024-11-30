@@ -8,7 +8,7 @@ import { Testimonials } from '@/components/testimonials';
 
 export default function Home() {
   return (
-    <>
+    <div>
       <SiteHeader />
       <HeroSection />
       <LogoTicker />
@@ -16,6 +16,6 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <SiteFooter />
-    </>
+    </div>
   );
 }
