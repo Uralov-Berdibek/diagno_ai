@@ -37,8 +37,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
-      <html lang='en' suppressHydrationWarning>
-        <body className={clsx(inter.className, 'antialiased')}>{children}</body>
+      <html
+        lang='en'
+        suppressHydrationWarning
+        className='[--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem] [scrollbar-gutter:stable] js-focus-visible'
+      >
+        <body
+          className={clsx(
+            inter.className,
+            'antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 ',
+          )}
+        >
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
