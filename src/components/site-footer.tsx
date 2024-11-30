@@ -2,7 +2,6 @@ import X from '@/assets/social-x.svg';
 import Instagram from '@/assets/social-instagram.svg';
 import Youtube from '@/assets/social-youtube.svg';
 import SiteLogo from '@/assets/logo.svg';
-import Link from 'next/link';
 
 export default function SiteFooter() {
   return (
