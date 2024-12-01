@@ -1,10 +1,25 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import useSidebarMobile from '../../../hooks/useSidebarMobile';
+import useHeaderbarMobile from '../../../hooks/useHeaderbarMobile';
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const sidebarMobile = useSidebarMobile();
+  const headerbarMobile = useHeaderbarMobile();
+
+  const onOpenSidebarMobile = useCallback(() => {
+    sidebarMobile.onOpen();
+  }, [sidebarMobile]);
+
+  const onOpenHeaderbarMobile = useCallback(() => {
+    headerbarMobile.onOpen();
+  }, [headerbarMobile]);
+
   return (
     <div className='sticky top-0 z-40 w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/60 dark:bg-transparent'>
       <div className='max-w-8xl mx-auto'>
@@ -20,40 +35,6 @@ const Header = (props: Props) => {
                 className='w-[82px]'
               />
             </a>
-            {/* <a
-              className='ml-3 text-xs leading-5 font-medium text-white dark:text-sky-400 bg-slate-900 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-slate-700'
-              href='https://tailwindui.com/all-access'
-            >
-              <strong className='font-semibold'>Black Friday Deal</strong>
-              <svg
-                width='2'
-                height='2'
-                fill='currentColor'
-                aria-hidden='true'
-                className='ml-2 text-slate-400 dark:text-sky-400/70'
-              >
-                <circle cx='1' cy='1' r='1'></circle>
-              </svg>
-              <span className='ml-2'>
-                Get Tailwind UI + Refactoring UI{' '}
-                <span className='hidden min-[1320px]:inline'>together</span> for over 30% off
-              </span>
-              <svg
-                width='3'
-                height='6'
-                className='ml-3 overflow-visible text-slate-300 dark:text-sky-400'
-                aria-hidden='true'
-              >
-                <path
-                  d='M0 0L3 3L0 6'
-                  fill='none'
-                  stroke='currentColor'
-                  stroke-width='1.5'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                ></path>
-              </svg>
-            </a> */}
             <div className='relative hidden lg:flex items-center ml-auto'>
               <nav className='text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200'>
                 <ul className='flex space-x-8'>
@@ -106,9 +87,9 @@ const Header = (props: Props) => {
                     <svg
                       viewBox='0 0 24 24'
                       fill='none'
-                      stroke-width='2'
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
                       className='w-6 h-6'
                     >
                       <path
@@ -124,8 +105,8 @@ const Header = (props: Props) => {
                   <span className='hidden dark:inline'>
                     <svg viewBox='0 0 24 24' fill='none' className='w-6 h-6'>
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z'
                         className='fill-sky-400/20'
                       ></path>
@@ -134,8 +115,8 @@ const Header = (props: Props) => {
                         className='fill-sky-500'
                       ></path>
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z'
                         className='fill-sky-500'
                       ></path>
@@ -158,9 +139,9 @@ const Header = (props: Props) => {
                 height='24'
                 fill='none'
                 stroke='currentColor'
-                stroke-width='2'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
                 aria-hidden='true'
               >
                 <path d='m19 19-3.5-3.5'></path>
@@ -171,15 +152,16 @@ const Header = (props: Props) => {
               <button
                 type='button'
                 className='text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300'
+                onClick={onOpenHeaderbarMobile}
               >
                 <span className='sr-only'>Navigation</span>
                 <svg width='24' height='24' fill='none' aria-hidden='true'>
                   <path
                     d='M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'
                     stroke='currentColor'
-                    stroke-width='1.5'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   ></path>
                 </svg>
               </button>
@@ -206,6 +188,7 @@ const Header = (props: Props) => {
           <button
             type='button'
             className='text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300'
+            onClick={onOpenSidebarMobile}
           >
             <span className='sr-only'>Navigation</span>
             <svg width='24' height='24'>
@@ -213,8 +196,8 @@ const Header = (props: Props) => {
                 d='M5 6h14M5 12h14M5 18h14'
                 fill='none'
                 stroke='currentColor'
-                stroke-width='2'
-                stroke-linecap='round'
+                strokeWidth='2'
+                strokeLinecap='round'
               ></path>
             </svg>
           </button>
@@ -231,8 +214,8 @@ const Header = (props: Props) => {
                   d='M0 0L3 3L0 6'
                   fill='none'
                   stroke='currentColor'
-                  stroke-width='1.5'
-                  stroke-linecap='round'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
                 ></path>
               </svg>
             </li>

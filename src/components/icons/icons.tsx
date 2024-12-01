@@ -5,14 +5,14 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 export const DocumentationIcon: React.FC<IconProps> = (props) => (
   <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none'>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M8.5 7c1.093 0 2.117.27 3 .743V17a6.345 6.345 0 0 0-3-.743c-1.093 0-2.617.27-3.5.743V7.743C5.883 7.27 7.407 7 8.5 7Z'
       className='fill-sky-200 group-hover:fill-sky-500 dark:fill-sky-300 dark:group-hover:fill-sky-300'
     ></path>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M15.5 7c1.093 0 2.617.27 3.5.743V17c-.883-.473-2.407-.743-3.5-.743s-2.117.27-3 .743V7.743a6.344 6.344 0 0 1 3-.743Z'
       className='fill-sky-400 group-hover:fill-sky-500 dark:fill-sky-200 dark:group-hover:fill-sky-200'
     ></path>
@@ -22,8 +22,8 @@ export const DocumentationIcon: React.FC<IconProps> = (props) => (
 export const TemplatesIcon: React.FC<IconProps> = (props) => (
   <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none'>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M8 6C6.89543 6 6 6.89543 6 8V16C6 17.1046 6.89543 18 8 18H10.5C11.0523 18 11.5 17.5523 11.5 17V12C11.5 10.6193 12.6193 9.5 14 9.5H18V8C18 6.89543 17.1046 6 16 6H8ZM7.25 8C7.25 7.58579 7.58579 7.25 8 7.25H8.01C8.42421 7.25 8.76 7.58579 8.76 8C8.76 8.41421 8.42421 8.75 8.01 8.75H8C7.58579 8.75 7.25 8.41421 7.25 8ZM10 7.25C9.58579 7.25 9.25 7.58579 9.25 8C9.25 8.41421 9.58579 8.75 10 8.75H10.01C10.4242 8.75 10.76 8.41421 10.76 8C10.76 7.58579 10.4242 7.25 10.01 7.25H10Z'
       fill='#E879F9'
       className='fill-fuchsia-400 group-hover:fill-fuchsia-500 dark:group-hover:fill-fuchsia-300 dark:fill-slate-400'
@@ -39,8 +39,8 @@ export const TemplatesIcon: React.FC<IconProps> = (props) => (
 export const ScreencastsIcon: React.FC<IconProps> = (props) => (
   <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none'>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z'
       className='fill-pink-400 group-hover:fill-pink-500 dark:group-hover:fill-pink-300 dark:fill-slate-600'
     ></path>
@@ -59,16 +59,16 @@ export const PlaygroundIcon: React.FC<IconProps> = (props) => (
     ></path>
     <path
       d='M10.25 9.75 7.75 12l2.5 2.25'
-      stroke-width='1.5'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
       className='stroke-blue-50 dark:group-hover:stroke-white dark:stroke-slate-400'
     ></path>
     <path
       d='m13.75 9.75 2.5 2.25-2.5 2.25'
-      stroke-width='1.5'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
       className='stroke-blue-200 dark:group-hover:stroke-white dark:stroke-slate-400'
     ></path>
   </svg>
@@ -94,8 +94,8 @@ export const ResourcesIcon: React.FC<IconProps> = (props) => (
 export const ComunityIcon: React.FC<IconProps> = (props) => (
   <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none'>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M11 5a6 6 0 0 0-4.687 9.746c.215.27.315.62.231.954l-.514 2.058a1 1 0 0 0 1.485 1.1l2.848-1.71c.174-.104.374-.15.576-.148H13a6 6 0 0 0 0-12h-2Z'
       className='fill-violet-400 group-hover:fill-violet-500 dark:group-hover:fill-violet-300 dark:fill-slate-600'
     ></path>
