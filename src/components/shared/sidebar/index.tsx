@@ -32,7 +32,7 @@ const navItems = [
 
 const Sidebar = (props: Props) => {
   return (
-    <div className='hidden lg:block bg-white dark:bg-slate-900 fixed z-20 inset-0 top-[3.8125rem] left-0 w-[19rem] pb-10 pl-8 pr-6 overflow-y-auto border-r border-slate-900/10'>
+    <div className='hidden lg:block bg-white dark:bg-slate-900 fixed z-20 inset-0 top-[3.8125rem] left-0 w-[19rem] pb-10 pl-8 pr-6 overflow-y-auto border-r border-slate-900/10 dark:border-slate-50/[0.06] '>
       <nav id='nav' className='lg:text-sm lg:leading-6 relative pb-20'>
         <Search />
         <ul>

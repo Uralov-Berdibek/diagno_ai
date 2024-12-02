@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { clsx } from 'clsx';
 import { ClerkProvider } from '@clerk/nextjs';
+import { ThemeProvider } from '../components/shared/providers/theme-providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -38,7 +39,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <ClerkProvider>
       <html lang='en' suppressHydrationWarning>
-        <body className={clsx(inter.className, 'antialiased')}>{children}</body>
+        <body className={clsx(inter.className, 'antialiased')}>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );
