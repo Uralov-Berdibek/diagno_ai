@@ -119,3 +119,47 @@ export const ComunityIcon: React.FC<IconProps> = (props) => (
     ></circle>
   </svg>
 );
+
+export const PlusIcon: React.FC<IconProps> = (props) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    xmlnsXlink='http://www.w3.org/1999/xlink'
+    version='1.1'
+    className='w-4 h-4'
+    viewBox='0 0 256 256'
+    xmlSpace='preserve'
+  >
+    <defs></defs>
+    <g
+      style={{
+        stroke: 'none',
+        strokeWidth: 0,
+        strokeDasharray: 'none',
+        strokeLinecap: 'butt',
+        strokeLinejoin: 'miter',
+        strokeMiterlimit: 10,
+        fill: 'none',
+        fillRule: 'nonzero',
+        opacity: 1,
+      }}
+      transform='translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)'
+    >
+      <path
+        d='M 86.5 41.5 h -38 v -38 C 48.5 1.567 46.933 0 45 0 c -1.933 0 -3.5 1.567 -3.5 3.5 v 38 h -38 C 1.567 41.5 0 43.067 0 45 s 1.567 3.5 3.5 3.5 h 38 v 38 c 0 1.933 1.567 3.5 3.5 3.5 c 1.933 0 3.5 -1.567 3.5 -3.5 v -38 h 38 c 1.933 0 3.5 -1.567 3.5 -3.5 S 88.433 41.5 86.5 41.5 z'
+        style={{
+          stroke: 'none',
+          strokeWidth: 1,
+          strokeDasharray: 'none',
+          strokeLinecap: 'butt',
+          strokeLinejoin: 'miter',
+          strokeMiterlimit: 10,
+          fill: 'rgb(29,29,27)',
+          fillRule: 'nonzero',
+          opacity: 1,
+        }}
+        transform=' matrix(1 0 0 1 0 0) '
+        strokeLinecap='round'
+      />
+    </g>
+  </svg>
+);
