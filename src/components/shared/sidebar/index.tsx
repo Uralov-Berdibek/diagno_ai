@@ -13,20 +13,20 @@ import {
 
 type Props = {};
 
-const navItems = [
+export const navItems = [
   {
-    name: 'Documentation',
+    name: 'Dashboard',
     href: '/dashboard',
     icon: <DocumentationIcon />,
   },
   {
-    name: 'Templates',
+    name: 'Shablonlar',
     href: '/tamplates',
     icon: <TemplatesIcon />,
   },
-  { name: 'Screencasts', href: '/screencasts', icon: <ScreencastsIcon /> },
+  { name: 'Trening', href: '/screencasts', icon: <ScreencastsIcon /> },
   { name: 'Playground', href: '/playgraund', icon: <PlaygroundIcon /> },
-  { name: 'Resources', href: '/resources', icon: <ResourcesIcon /> },
+  { name: 'Resurslar', href: '/resources', icon: <ResourcesIcon /> },
   { name: 'Community', href: '/resources', icon: <ComunityIcon /> },
 ];
 

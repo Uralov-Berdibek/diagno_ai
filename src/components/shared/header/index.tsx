@@ -48,7 +48,7 @@ const Header = (props: Props) => {
                       className='hover:text-sky-500 dark:hover:text-sky-400'
                       href='/docs/installation'
                     >
-                      Docs
+                      Doctors
                     </a>
                   </li>
                   <li>
@@ -56,7 +56,7 @@ const Header = (props: Props) => {
                       href='https://tailwindui.com/?ref=top'
                       className='hover:text-sky-500 dark:hover:text-sky-400'
                     >
-                      Components
+                      Developers
                     </a>
                   </li>
                   <li>
@@ -88,7 +88,7 @@ const Header = (props: Props) => {
               type='button'
               className='ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300'
             >
-              <span className='sr-only'>Search</span>
+              <span className='sr-only'>Qidiruv</span>
               <svg
                 width='24'
                 height='24'

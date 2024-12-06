@@ -2,36 +2,12 @@
 
 import React, { useCallback } from 'react';
 import SidebarItem from './sidebar-item';
-import {
-  ComunityIcon,
-  DocumentationIcon,
-  PlaygroundIcon,
-  ResourcesIcon,
-  ScreencastsIcon,
-  TemplatesIcon,
-} from '../../icons/icons';
 import Documentation from './documentation';
 import Image from 'next/image';
 
 import useSidebarMobile from '../../../hooks/useSidebarMobile';
 import clsx from 'clsx';
-
-const navItems = [
-  {
-    name: 'Documentation',
-    href: '/dashboard',
-    icon: <DocumentationIcon />,
-  },
-  {
-    name: 'Templates',
-    href: '/tamplates',
-    icon: <TemplatesIcon />,
-  },
-  { name: 'Screencasts', href: '/screencasts', icon: <ScreencastsIcon /> },
-  { name: 'Playground', href: '/playgraund', icon: <PlaygroundIcon /> },
-  { name: 'Resources', href: '/resources', icon: <ResourcesIcon /> },
-  { name: 'Community', href: '/resources', icon: <ComunityIcon /> },
-];
+import { navItems } from '.';
 
 const MobileSidebar = () => {
   const sidebarMobile = useSidebarMobile();

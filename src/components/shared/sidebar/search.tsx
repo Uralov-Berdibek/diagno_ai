@@ -27,7 +27,7 @@ const Search = () => {
               strokeLinejoin='round'
             ></circle>
           </svg>
-          Quick search...
+          Tezkor qidiruv...
           <span className='ml-auto pl-3 flex-none text-xs font-semibold'>Ctrl K</span>
         </button>
       </div>

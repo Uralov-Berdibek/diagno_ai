@@ -9,7 +9,7 @@ const Documentation = () => {
       >
         <div className='grid gap-1 z-20'>
           <p>Diagno AI Documentation →</p>
-          <p className='text-[0.8125rem] text-gray-300'>Preview the current Diagno AI.</p>
+          <p className='text-[0.8125rem] text-gray-300'>Joriy Diagno AI-ni ko&#39;rib chiqing.</p>
         </div>
         <div className='absolute h-full w-1/2 right-0 top-0 overflow-hidden'>
           <div className='absolute h-full w-full bg-gradient-to-r from-slate-800 group-hover:from-slate-900 z-10'></div>

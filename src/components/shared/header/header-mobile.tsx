@@ -35,7 +35,7 @@ const HeaderMobile = () => {
           <ul className='space-y-6'>
             <li>
               <a className='hover:text-sky-500 dark:hover:text-sky-400' href='/docs/installation'>
-                Docs
+                Doctors
               </a>
             </li>
             <li>
@@ -43,7 +43,7 @@ const HeaderMobile = () => {
                 href='https://tailwindui.com/?ref=top'
                 className='hover:text-sky-500 dark:hover:text-sky-400'
               >
-                Components
+                Developers
               </a>
             </li>
             <li>
