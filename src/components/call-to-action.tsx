@@ -61,12 +61,12 @@ export function CallToAction() {
             />
             <div className={'relative'}>
               <h2 className={'text-5xl tracking-tighter text-center font-medium'}>
-                AI yordamida tibbiyotda yuqori samarali tahlil
+                AI yordamida tibbiyotda yuqori samarali tahlil.
               </h2>
               <p
                 className={'text-center text-lg md:text-xl text-white/70 tracking-tight px-4 mt-5'}
               >
-                Murakkabliksiz aniq, ta'sirli natijalarga erishing.
+                Murakkabliksiz aniq, ta&#39;sirli natijalarga erishing.
               </p>
               <div className={'flex justify-center mt-8'}>
                 <ActionButton label={'Foydalanishni boshlash.'} />
