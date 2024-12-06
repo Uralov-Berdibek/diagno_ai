@@ -14,7 +14,7 @@ import { ComponentPropsWithoutRef, useEffect, useRef, useState } from 'react';
 const tabs = [
   {
     icon: '/assets/lottie/vroom.lottie',
-    title: 'User-friendly dashboard',
+    title: 'Foydalanuvchi uchun qulay boshqaruv paneli',
     isNew: false,
     backgroundPositionX: 0,
     backgroundPositionY: 0,
@@ -22,7 +22,7 @@ const tabs = [
   },
   {
     icon: '/assets/lottie/click.lottie',
-    title: 'One-click optimization',
+    title: 'Bir marta bosish bilan optimallashtirish',
     isNew: false,
     backgroundPositionX: 98,
     backgroundPositionY: 100,
@@ -30,7 +30,7 @@ const tabs = [
   },
   {
     icon: '/assets/lottie/stars.lottie',
-    title: 'Smart keyword generator',
+    title: 'Aqlli tahlil va javob generatori',
     isNew: true,
     backgroundPositionX: 100,
     backgroundPositionY: 27,
@@ -152,15 +152,16 @@ export function Features() {
       <section className={'py-20 md:py-24'}>
         <div className={'container'}>
           <h2 className={'text-5xl md:text-6xl font-medium text-center tracking-tighter'}>
-            Enhance your healthcare journey.
+            Sog&#39;lig&#39;ingizga g&#39;amxo&#39;rlik qilishni yangi bosqichga olib chiqing.
           </h2>
           <p
             className={
               'text-white/70 text-lg md:text-xl max-w-2xl mx-auto text-center tracking-tight mt-5'
             }
           >
-            From individual users to medical professionals, our AI-driven tool transforms the way
-            you analyze and understand health conditions with precision and ease.
+            Oddiy foydalanuvchilardan tortib tibbiyot mutaxassislarigacha, bizning AI asosidagi
+            vositamiz sog&#39;liq holatlarini aniqlik va qulaylik bilan tahlil qilish va tushunish
+            usulini o&#39;zgartiradi.
           </p>
 
           <div className={'mt-10 grid lg:grid-cols-3 gap-3'}>

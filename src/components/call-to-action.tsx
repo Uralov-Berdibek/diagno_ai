@@ -61,15 +61,15 @@ export function CallToAction() {
             />
             <div className={'relative'}>
               <h2 className={'text-5xl tracking-tighter text-center font-medium'}>
-                AI-driven SEO for everyone
+                AI yordamida tibbiyotda yuqori samarali tahlil
               </h2>
               <p
                 className={'text-center text-lg md:text-xl text-white/70 tracking-tight px-4 mt-5'}
               >
-                Achieve clear, impactful results without the complexity.
+                Murakkabliksiz aniq, ta'sirli natijalarga erishing.
               </p>
               <div className={'flex justify-center mt-8'}>
-                <ActionButton label={'Join Waitlist for Early Access'} />
+                <ActionButton label={'Foydalanishni boshlash.'} />
               </div>
             </div>
           </motion.div>

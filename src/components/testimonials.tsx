@@ -40,14 +40,15 @@ export function Testimonials() {
       <section className={'py-20 md:py-24'}>
         <div className={'container'}>
           <h2 className={'text-5xl md:text-6xl font-medium text-center tracking-tighter'}>
-            Beyond Expectations.
+            Ishonchingizni oshiradigan tajribalar
           </h2>
           <p
             className={
               'text-white/70 text-lg md:text-xl max-w-2xl mx-auto text-center tracking-tight mt-5'
             }
           >
-            Our revolutionary AI SEO tools have transformed our clients&apos; strategies.
+            AI va tibbiyotning innovatsion uyg&#39;unligi orqali sog&#39;liqni saqlash xizmatlari
+            haqida haqiqiy odamlarning fikrlari.
           </p>
           <div
             className={

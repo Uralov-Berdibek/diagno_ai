@@ -100,12 +100,12 @@ export function HeroSection() {
             Diagno AI
           </h1>
           <p className={'text-lg md:text-xl max-w-xl mx-auto text-white/70 mt-5 text-center'}>
-            Understand your medical condition with AI and get the right recommendations. Upload your
-            analysis or write your own.
+            O&#39;zingizning tibbiy holatingizni AI yordamida tushuning va to&#39;g&#39;ri
+            tavsiyalar oling. Tahlilingizni yuklang yoki o&#39;zingiz to&#39;ldiring.
           </p>
           <div className={'flex justify-center mt-5'}>
             <Link href={'/sign-in'}>
-              <ActionButton label={'Join Waitlist'} />
+              <ActionButton label={'Sinab korish'} />
             </Link>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function SiteFooter() {
             <div className={'border size-8 rounded-lg inline-flex items-center justify-center'}>
               <SiteLogo className={'size-6 h-auto'} />
             </div>
-            <p className={'font-medium'}>Revolutionizing Healthcare with AI</p>
+            <p className={'font-medium'}>AI yordamida tibbiyot sohasida inqilob</p>
           </section>
 
           <p className='text-balance text-center text-sm leading-loose text-muted-foreground md:text-left'>

@@ -26,22 +26,22 @@ export default function SiteHeader() {
             <section className={'max-md:hidden'}>
               <nav className={'flex gap-8 items-center text-sm'}>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Features
+                  Xususiyatlari
                 </Link>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
                   Developers
                 </Link>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Pricing
+                  Narxlar
                 </Link>
                 <Link href={'#'} className={'text-white/70 hover:text-white transition'}>
-                  Changelog
+                  Yangiliklar
                 </Link>
               </nav>
             </section>
             <section className={'flex max-md:gap-4 items-center'}>
               <Link href={'/sign-in'}>
-                <ActionButton label={'Join Waitlist'} />
+                <ActionButton label={'Kirish'} />
               </Link>
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger>
@@ -54,7 +54,7 @@ export default function SiteHeader() {
                     >
                       <SiteLogo className={'size-6 h-auto'} />
                     </div>
-                    <p className={'font-bold'}>Revolutionizing Healthcare with AI</p>
+                    <p className={'font-bold'}>AI yordamida tibbiyot sohasida inqilob</p>
                   </div>
                   <div className={'mt-8 mb-4'}>
                     <nav className={'grid gap-4 items-center text-lg'}>
@@ -65,7 +65,7 @@ export default function SiteHeader() {
                         }
                       >
                         <Feather className={'size-6'} />
-                        Features
+                        Xususiyatlari
                       </Link>
                       <Link
                         href={'#'}
@@ -83,7 +83,7 @@ export default function SiteHeader() {
                         }
                       >
                         <Wallet2 className={'size-6'} />
-                        Pricing
+                        Narxlar
                       </Link>
                       <Link
                         href={'#'}
@@ -92,7 +92,7 @@ export default function SiteHeader() {
                         }
                       >
                         <Newspaper className={'size-6'} />
-                        Changelog
+                        Yangiliklar
                       </Link>
                     </nav>
                   </div>
