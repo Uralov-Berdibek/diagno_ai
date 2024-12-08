@@ -3,10 +3,10 @@ import React from 'react';
 const MainSection = () => {
   return (
     <section className='relative'>
-      <h2 className='text-slate-900 text-xl tracking-tight font-bold mb-3 dark:text-slate-200'>
+      <h2 className='text-slate-900 text-xl tracking-tight font-bold mb-3 dark:text-slate-200 ml-4'>
         Shaxsiy sog&#39;liqni tahlil paneli
       </h2>
-      <div className='mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark'>
+      <div className='mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark ml-4'>
         <p>
           AI yordamida tibbiy natijalar va yozuvlarni tahlil qilib, siz va oilangizning sog&#39;ligi
           haqida chuqur tushuncha hosil qiling.
