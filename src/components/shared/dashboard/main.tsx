@@ -13,27 +13,24 @@ const MainSection = () => {
         </p>
       </div>
       <ul className='mt-10 grid grid-cols-1 gap-x-16 gap-y-8 xl:grid-cols-2 xl:gap-y-10'>
-        <li className='relative flex items-start p-4 dark:hover:bg-slate-900 hover:rounded-t-lg'>
-          <div className='w-16 h-16 p-[0.1875rem] rounded-full ring-1 ring-slate-900/10 shadow overflow-hidden flex-none dark:bg-indigo-500 dark:highlight-white/20'>
-            <div
-              className='aspect-w-1 aspect-h-1 bg-[length:100%] dark:hidden'
-              style={{
-                backgroundImage: `url(/customization.png)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: '100vh',
-              }}
-            ></div>
-            <div
-              className='hidden aspect-w-1 aspect-h-1 bg-[length:100%] dark:block'
-              style={{
-                backgroundImage: `url(/customization.png)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: '100vh', // Example height
-              }}
-            ></div>
-          </div>
+        <li className='relative flex items-start p-4 dark:hover:bg-slate-900/15 hover:rounded-t-lg'>
+          <span className='inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg'>
+            <svg
+              className='h-6 w-6 text-white'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              aria-hidden='true'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
+              ></path>
+            </svg>
+          </span>
           <div className='peer group flex-auto ml-6'>
             <h3 className='mb-2 font-semibold text-slate-900 dark:text-slate-200'>
               <a
@@ -48,10 +45,10 @@ const MainSection = () => {
                   <path
                     d='M0 0L3 3L0 6'
                     fill='none'
-                    stroke-width='2'
+                    strokeWidth='2'
                     stroke='currentColor'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   ></path>
                 </svg>
               </a>
@@ -62,27 +59,24 @@ const MainSection = () => {
           </div>
           <div className='absolute -z-10 -inset-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 opacity-0 peer-hover:opacity-100 sm:-inset-4'></div>
         </li>
-        <li className='relative flex items-start p-4 dark:hover:bg-slate-900 hover:rounded-t-lg'>
-          <div className='w-16 h-16 p-[0.1875rem] rounded-full ring-1 ring-slate-900/10 shadow overflow-hidden flex-none dark:bg-indigo-500 dark:highlight-white/20'>
-            <div
-              className='aspect-w-1 aspect-h-1 bg-[length:100%] dark:hidden'
-              style={{
-                backgroundImage: `url(/spectronlabs.png)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: '100vh',
-              }}
-            ></div>
-            <div
-              className='hidden aspect-w-1 aspect-h-1 bg-[length:100%] dark:block'
-              style={{
-                backgroundImage: `url(/spectronlabs.png)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: '100vh',
-              }}
-            ></div>
-          </div>
+        <li className='relative flex items-start p-4 dark:hover:bg-slate-900/15 hover:rounded-t-lg'>
+          <span className='inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg'>
+            <svg
+              className='h-6 w-6 text-white'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              aria-hidden='true'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
+              ></path>
+            </svg>
+          </span>
           <div className='peer group flex-auto ml-6'>
             <h3 className='mb-2 font-semibold text-slate-900 dark:text-slate-200'>
               <a
