@@ -31,7 +31,7 @@ export default function Response({ requestType, requestContent, response }: Requ
   };
 
   return (
-    <div className='p-4 border border-gray-300 rounded-lg space-y-4 dark:bg-gray-800 dark:border-gray-600'>
+    <div className='p-4 border border-gray-300 rounded-lg space-y-4 dark:bg-gray-800 dark:border-gray-600 ml-4'>
       {/* Request Section */}
       <div className='flex flex-col sm:flex-row sm:items-center sm:space-x-2'>
         {requestType === 'text' && (
