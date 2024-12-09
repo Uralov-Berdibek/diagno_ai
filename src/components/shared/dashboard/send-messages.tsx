@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Paperclip, Mic } from 'lucide-react';
+import { Paperclip, Mic, ArrowRight } from 'lucide-react';
 const SendMessages = () => {
   const [comment, setComment] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -33,8 +33,8 @@ const SendMessages = () => {
         placeholder='Add your comment...'
         rows={1}
       />
-      <button className='bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600'>
-        Yuborish
+      <button className='bg-blue-500 text-white px-2 py-1 rounded-lg hover:bg-blue-600'>
+        <ArrowRight size={20} />
       </button>
     </div>
   );

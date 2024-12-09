@@ -20,8 +20,8 @@ export const navItems = [
     icon: <DocumentationIcon />,
   },
   {
-    name: 'Shablonlar',
-    href: '/tamplates',
+    name: 'Files',
+    href: '/dashboard/files',
     icon: <TemplatesIcon />,
   },
   { name: 'Trening', href: '/screencasts', icon: <ScreencastsIcon /> },

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['avatars.mds.yandex.net'], // Add the hostname here
+    domains: ['avatars.mds.yandex.net', 'miro.medium.com'], // Add hostnames here without protocol
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
@@ -18,7 +18,7 @@ const nextConfig = {
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
-        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+        resourceQuery: { not: [...(fileLoaderRule.resourceQuery?.not || []), /url/] }, // exclude if *.svg?url
         use: ['@svgr/webpack'],
       },
     );
