@@ -1,6 +1,7 @@
 import React from 'react';
-import Lists from '../../../components/shared/dashboard/lists';
+import Lists from '../../../components/shared/dashboard/files';
 import { IFolderAndFile } from '../../../types';
+import FilesHeader from '../../../components/shared/dashboard/files/files-header';
 
 const folderAndFileList: IFolderAndFile[] = [
   {
@@ -64,6 +65,7 @@ const FilesPage = () => {
   return (
     <div className='lg:pl-[21rem] pr-6'>
       <div className='max-w-3xl mx-auto relative z-20 pt-10 xl:max-w-none ml-[14px]'>
+        <FilesHeader />
         <Lists files={folderAndFileList} />
       </div>
     </div>

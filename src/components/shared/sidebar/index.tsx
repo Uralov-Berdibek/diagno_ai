@@ -26,7 +26,7 @@ export const navItems = [
   },
   { name: 'Trening', href: '/screencasts', icon: <ScreencastsIcon /> },
   { name: 'Playground', href: '/playgraund', icon: <PlaygroundIcon /> },
-  { name: 'Resurslar', href: '/resources', icon: <ResourcesIcon /> },
+  { name: 'Resurslar', href: '/dashboard/resources', icon: <ResourcesIcon /> },
   { name: 'Community', href: '/resources', icon: <ComunityIcon /> },
 ];
 

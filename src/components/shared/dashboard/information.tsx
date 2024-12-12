@@ -12,15 +12,13 @@ const Information = () => {
         <div className='mb-6 text-sm leading-6 text-slate-600 space-y-4 dark:text-slate-400'>
           <p>
             Diagno AI foydalanuvchilarga oddiy va qulay interfeys orqali kasallik belgilarini
-            kiritish imkonini beradi. Sun&#39;iy intellekt ushbu ma&#39;lumotlarni tahlil qilib,
-            ehtimoliy tashxis va davolash bo&#39;yicha tavsiyalarni taklif etadi. Barcha jarayon
-            tezkor va aniq natijalarga asoslanadi.
+            kiritish imkonini beradi. AI ushbu ma&#39;lumotlarni tahlil qilib, ehtimoliy tashxis va
+            davolash bo&#39;yicha tavsiyalarni taklif etadi. Barcha jarayon tezkor va aniq
+            natijalarga asoslanadi.
           </p>
           <p>
             Diagno AI tomonidan taqdim etilgan tashxis va tavsiyalar sog&#39;liqni saqlash
-            bo&#39;yicha dastlabki qadamlar uchun mo&#39;ljallangan. Foydalanuvchilar tavsiyalar
-            asosida shifokor bilan maslahatlashishi yoki kerakli choralarni ko&#39;rishi mumkin.
-            Tizim foydalanuvchilarning ma&#39;lumotlarini maxfiy saqlaydi.
+            bo&#39;yicha dastlabki qadamlar uchun mo&#39;ljallangan.
           </p>
         </div>
         <a

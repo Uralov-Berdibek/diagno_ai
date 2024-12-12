@@ -37,7 +37,7 @@ const MainSection = () => {
                 className='before:absolute before:-inset-3 before:rounded-2xl sm:before:-inset-4'
                 href='/docs/utility-first'
               >
-                Tibbiy analizni tahlil qiling
+                Diagno AI-dan qanday foydalanish kerak.
                 <svg
                   viewBox='0 0 3 6'
                   className='ml-3 w-auto h-1.5 overflow-visible inline -mt-px text-slate-400 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100'
@@ -83,7 +83,7 @@ const MainSection = () => {
                 className='before:absolute before:-inset-3 before:rounded-2xl sm:before:-inset-4'
                 href='/docs/responsive-design'
               >
-                Shaxsiy sog&#39;liq haqidagi matn
+                Diagno AI qanday ishlayi.
                 <svg
                   viewBox='0 0 3 6'
                   className='ml-3 w-auto h-1.5 overflow-visible inline -mt-px text-slate-400 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100'

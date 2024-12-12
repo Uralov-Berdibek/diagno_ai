@@ -4,6 +4,7 @@ import Sidebar from '../../components/shared/sidebar';
 import MobileSidebar from '../../components/shared/sidebar/mobile-sidebar';
 import HeaderMobile from '../../components/shared/header/header-mobile';
 import SearchModal from '../../components/modal/search-modal';
+import { Toaster } from 'sonner';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -16,6 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <MobileSidebar />
         {children}
       </div>
+      <Toaster position='bottom-right' />
     </div>
   );
 };

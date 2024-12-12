@@ -7,7 +7,7 @@ import { File, Paperclip, Save, X } from 'lucide-react';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 import { ElementRef, useRef, useState } from 'react';
-import ListAction from '../dashboard/lists/list-action';
+import ListAction from '../dashboard/files/list-action';
 import { Avatar, AvatarImage } from '../../ui/avatar';
 import { Button } from '../../ui/button';
 import { Input } from '../../ui/input';
