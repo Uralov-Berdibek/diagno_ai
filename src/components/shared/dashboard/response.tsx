@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { FileText, PlayCircle, Copy, Share2, Heart, Save } from 'lucide-react';
+import { toast } from 'sonner';
+import AudioPlayer from '../audio-player';
 
-type RequestType = 'text' | 'file' | 'sound';
+type RequestType = 'text' | 'file' | 'voice';
 
 interface RequestResponseProps {
   requestType: RequestType;
@@ -17,7 +19,10 @@ const Response: React.FC<RequestResponseProps> = ({ requestType, requestContent,
 
   const handleCopy = () => {
     navigator.clipboard.writeText(response);
-    alert('Response copied to clipboard!');
+    toast.success('Response copied to clipboard!', {
+      description: 'You can now paste it anywhere.',
+      duration: 3000,
+    });
   };
 
   const handleListen = () => {
@@ -39,27 +44,20 @@ const Response: React.FC<RequestResponseProps> = ({ requestType, requestContent,
             <span className='text-gray-800 dark:text-gray-200'>{requestContent}</span>
           </div>
         )}
-        {requestType === 'sound' && (
-          <div className='flex items-center space-x-2 bg-gray-100 p-2 rounded-lg dark:bg-gray-700'>
-            <PlayCircle size={24} className='text-gray-500 dark:text-gray-400' />
-            <audio controls>
-              <source src={requestContent} />
-            </audio>
-          </div>
-        )}
+        {requestType === 'voice' && <AudioPlayer src={requestContent} />}
       </div>
-      <p className='bg-gray-100 p-4 rounded-lg dark:dark:bg-gray-700'>{response}</p>
+      <p className='bg-gray-100 p-4 rounded-lg dark:bg-gray-700'>{response}</p>
       <div className='flex space-x-4'>
-        <button onClick={handleCopy}>
+        <button onClick={handleCopy} className='flex items-center space-x-1 hover:text-blue-500'>
           <Copy size={18} />
         </button>
-        <button onClick={handleListen}>
+        <button onClick={handleListen} className='flex items-center space-x-1 hover:text-blue-500'>
           <PlayCircle size={18} />
         </button>
-        <button onClick={() => setLiked(!liked)}>
+        <button onClick={() => setLiked(!liked)} className='hover:text-red-500'>
           <Heart size={18} className={liked ? 'text-red-500' : 'text-gray-500'} />
         </button>
-        <button onClick={() => setSaved(!saved)}>
+        <button onClick={() => setSaved(!saved)} className='hover:text-green-500'>
           <Save size={18} className={saved ? 'text-green-500' : 'text-gray-500'} />
         </button>
       </div>

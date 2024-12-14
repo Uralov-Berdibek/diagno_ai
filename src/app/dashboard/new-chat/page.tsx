@@ -23,6 +23,22 @@ const NewChatPage = () => {
       email: 'johndoe@example.com',
       profileImage: 'path/to/image.jpg',
     },
+    {
+      name: 'Dr. John Doe',
+      workplace: 'City Hospital',
+      specialty: 'Cardiologist',
+      phone: '123-456-7890',
+      email: 'johndoe@example.com',
+      profileImage: 'path/to/image.jpg',
+    },
+    {
+      name: 'Dr. John Doe',
+      workplace: 'City Hospital',
+      specialty: 'Cardiologist',
+      phone: '123-456-7890',
+      email: 'johndoe@example.com',
+      profileImage: 'path/to/image.jpg',
+    },
     // Add more doctor objects as needed
   ];
 
@@ -31,7 +47,7 @@ const NewChatPage = () => {
     setResponseData({
       requestType: type,
       requestContent: content,
-      response: 'Your message has been received.',
+      response: 'Sizning xabaringiz qabul qilindi.',
     });
   };
 
@@ -42,7 +58,7 @@ const NewChatPage = () => {
         {messageSent && (
           <>
             <Response
-              requestType={responseData.requestType as 'text' | 'file' | 'sound'}
+              requestType={responseData.requestType as 'text' | 'file' | 'voice'}
               requestContent={responseData.requestContent}
               response={responseData.response}
             />

@@ -12,6 +12,11 @@ const SendMessages: React.FC<SendMessagesProps> = ({ onSend }) => {
   const [comment, setComment] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isRecording, setIsRecording] = useState(false);
+  const [audioLevel, setAudioLevel] = useState(0);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
+  const animationFrameRef = useRef<number | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
@@ -46,31 +51,54 @@ const SendMessages: React.FC<SendMessagesProps> = ({ onSend }) => {
     }
   };
 
-  const handleVoiceMessage = async () => {
+  const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mediaRecorder = new MediaRecorder(stream);
-      const audioChunks: Blob[] = [];
+      mediaRecorderRef.current = mediaRecorder;
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
 
+      const source = audioContext.createMediaStreamSource(stream);
+      source.connect(analyser);
+
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      const updateAudioLevel = () => {
+        analyser.getByteFrequencyData(dataArray);
+        const avg = dataArray.reduce((a, b) => a + b, 0) / bufferLength;
+        setAudioLevel(avg);
+        animationFrameRef.current = requestAnimationFrame(updateAudioLevel);
+      };
+
+      audioChunksRef.current = [];
       mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          audioChunks.push(event.data);
-        }
+        if (event.data.size > 0) audioChunksRef.current.push(event.data);
       };
 
       mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        cancelAnimationFrame(animationFrameRef.current!);
+        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
         const audioUrl = URL.createObjectURL(audioBlob);
         onSend(audioUrl, 'voice');
+        setIsRecording(false);
+        setAudioLevel(0);
         stream.getTracks().forEach((track) => track.stop());
       };
 
+      setIsRecording(true);
+      updateAudioLevel();
       mediaRecorder.start();
-      setTimeout(() => {
-        mediaRecorder.stop();
-      }, 5000);
     } catch (error) {
-      alert('Unable to access microphone. Please ensure permissions are granted.');
+      toast.error('Unable to access microphone. Please ensure permissions are granted.');
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current) {
+      mediaRecorderRef.current.stop();
     }
   };
 
@@ -81,10 +109,33 @@ const SendMessages: React.FC<SendMessagesProps> = ({ onSend }) => {
           <Paperclip size={20} />
         </button>
         <input ref={fileInputRef} type='file' className='hidden' onChange={handleFileChange} />
-        <button className='text-gray-500 hover:text-gray-700' onClick={handleVoiceMessage}>
+
+        {/* Mic Button with Visual Recording Indicator */}
+        <button
+          className={`relative text-gray-500 hover:text-gray-700 ${
+            isRecording ? 'text-red-500' : ''
+          }`}
+          onMouseDown={startRecording}
+          onMouseUp={stopRecording}
+          onMouseLeave={stopRecording}
+        >
           <Mic size={20} />
+          {isRecording && (
+            <div className='absolute bottom-0 left-0 w-full h-1 bg-red-500 animate-pulse'></div>
+          )}
         </button>
       </div>
+
+      {/* Visual Sound Level Indicator */}
+      {isRecording && (
+        <div className='w-1/2 h-3 bg-gray-200 rounded-full overflow-hidden'>
+          <div
+            className='h-full bg-blue-500 transition-all duration-75'
+            style={{ width: `${Math.min(audioLevel, 100)}%` }}
+          ></div>
+        </div>
+      )}
+
       <textarea
         ref={textareaRef}
         value={comment}

@@ -3,9 +3,11 @@ import React from 'react';
 const FilesHeader = () => {
   return (
     <div className='flex justify-between items-center'>
-      <h3 className='mb-4 text-lg leading-6 font-semibold text-blue-500'>Diagno AI History</h3>
+      <h3 className='mb-4 text-lg leading-6 font-semibold text-slate-800 dark:text-white'>
+        Diagno AI-dan foydalanish tarixi
+      </h3>
       <a
-        className='group inline-flex items-center h-8 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-slate-700 text-white hover:bg-slate-800 focus:ring-offset-2 focus:ring-offset-slate-50 focus:ring-slate-400 dark:focus:ring-offset-0 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 -mt-4'
+        className='group inline-flex items-center h-8 rounded-sm text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-transparent text-slate-800 border border-slate-800 dark:text-white  focus:ring-offset-2 focus:ring-offset-slate-50 focus:ring-slate-400 dark:focus:ring-offset-0 dark:bg-slate-700  dark:focus:ring-slate-500 -mt-4'
         href='/dashboard/new-chat'
       >
         Yangi Chat<span className='sr-only'>, Diagno AI</span>
