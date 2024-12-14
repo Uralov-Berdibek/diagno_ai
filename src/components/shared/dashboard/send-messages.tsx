@@ -15,17 +15,16 @@ const SendMessages: React.FC<SendMessagesProps> = ({ onSend }) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
-
     if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto'; // Reset height
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`; // Set to scroll height
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   };
 
   const handleSendClick = () => {
     if (comment.trim()) {
       onSend(comment, 'text');
-      setComment(''); // Clear the textarea
+      setComment('');
     }
   };
 
@@ -38,19 +37,18 @@ const SendMessages: React.FC<SendMessagesProps> = ({ onSend }) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Check if the file type is a PDF
       if (file.type === 'application/pdf') {
         onSend(file.name, 'file');
       } else {
-        toast.error('Faqat PDF fayllarga ruxsat beriladi.');
+        toast.error('Only PDF files are allowed.');
       }
-      e.target.value = ''; // Reset the file input
+      e.target.value = '';
     }
   };
 
   const handleVoiceMessage = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true }); // Request microphone access
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mediaRecorder = new MediaRecorder(stream);
       const audioChunks: Blob[] = [];
 
@@ -61,15 +59,13 @@ const SendMessages: React.FC<SendMessagesProps> = ({ onSend }) => {
       };
 
       mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' }); // Create a Blob for the recorded audio
-        const audioUrl = URL.createObjectURL(audioBlob); // Create a URL for the audio
-        onSend(audioUrl, 'voice'); // Send the audio URL as a message
-        stream.getTracks().forEach((track) => track.stop()); // Stop the audio tracks
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        const audioUrl = URL.createObjectURL(audioBlob);
+        onSend(audioUrl, 'voice');
+        stream.getTracks().forEach((track) => track.stop());
       };
 
       mediaRecorder.start();
-
-      // Stop recording after a certain duration (e.g., 5 seconds)
       setTimeout(() => {
         mediaRecorder.stop();
       }, 5000);

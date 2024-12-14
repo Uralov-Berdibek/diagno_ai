@@ -26,11 +26,10 @@ const NewChatPage = () => {
     // Add more doctor objects as needed
   ];
 
-  const handleSendMessage = (content: any) => {
-    // Simulate setting response data after message is sent
+  const handleSendMessage = (content: string, type: 'text' | 'file' | 'voice') => {
     setMessageSent(true);
     setResponseData({
-      requestType: 'text', // Example type
+      requestType: type,
       requestContent: content,
       response: 'Your message has been received.',
     });
