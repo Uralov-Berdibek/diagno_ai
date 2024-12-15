@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import SendMessages from '../../../components/shared/dashboard/send-messages';
-import Response from '../../../components/shared/dashboard/response';
-import DoctorCard from '../../../components/shared/doctors/card/doctor-card';
+import SendMessages from '../../../../components/shared/dashboard/send-messages';
+import Response from '../../../../components/shared/dashboard/response';
+import DoctorCard from '../../../../components/shared/doctors/card/doctor-card';
+import { useParams } from 'next/navigation';
 
-const NewChatPage = () => {
+const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
   const [messageSent, setMessageSent] = useState(false);
   const [responseData, setResponseData] = useState({
     requestType: '',
@@ -42,13 +43,31 @@ const NewChatPage = () => {
     // Add more doctor objects as needed
   ];
 
-  const handleSendMessage = (content: string, type: 'text' | 'file' | 'voice') => {
+  const handleSendMessage = async (content: string, type: 'text' | 'file' | 'voice') => {
+    // const slug = (await params).slug;
+    // if (!slug) {
+    //   console.error('Slug not found!');
+    //   return;
+    // }
+
     setMessageSent(true);
     setResponseData({
       requestType: type,
       requestContent: content,
       response: 'Sizning xabaringiz qabul qilindi.',
     });
+
+    // Send chat data to the API
+    // await fetch('/api/chats', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     path: `/new-chats/${slug}`,
+    //     title: `Chat with ID: ${slug}`,
+    //     user: 'Anonymous User', // Replace with dynamic user data
+    //     createDate: new Date().toISOString(),
+    //   }),
+    // });
   };
 
   return (

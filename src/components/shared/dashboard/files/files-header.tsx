@@ -1,14 +1,27 @@
-import React from 'react';
+'use client';
 
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 const FilesHeader = () => {
+  // Function to generate a new UUID
+  const generateNewChatId = () => {
+    return uuidv4(); // Generates a unique UUID
+  };
+
+  const handleNewChat = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault(); // Prevents default link behavior
+    const newChatId = generateNewChatId();
+    window.location.href = `/dashboard/new-chat/${newChatId}`;
+  };
   return (
     <div className='flex justify-between items-center'>
       <h3 className='mb-4 text-lg leading-6 font-semibold text-slate-800 dark:text-white'>
         Diagno AI-dan foydalanish tarixi
       </h3>
       <a
+        onClick={handleNewChat}
         className='group inline-flex items-center h-8 rounded-sm text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-transparent text-slate-800 border border-slate-800 dark:text-white  focus:ring-offset-2 focus:ring-offset-slate-50 focus:ring-slate-400 dark:focus:ring-offset-0 dark:bg-slate-700  dark:focus:ring-slate-500 -mt-4'
-        href='/dashboard/new-chat'
+        href='#'
       >
         Yangi Chat<span className='sr-only'>, Diagno AI</span>
         <svg

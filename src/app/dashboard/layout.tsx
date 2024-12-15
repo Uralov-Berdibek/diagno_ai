@@ -17,7 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <MobileSidebar />
         {children}
       </div>
-      <Toaster position='bottom-right' />
+      <Toaster position='top-center' richColors />
     </div>
   );
 };

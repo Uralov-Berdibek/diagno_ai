@@ -3,7 +3,7 @@ import React from 'react';
 const MainSection = () => {
   return (
     <section className='relative'>
-      <h2 className='text-slate-900 text-xl tracking-tight font-bold mb-3 dark:text-slate-200 ml-4'>
+      <h2 className='text-slate-900 text-xl font-bold mb-3 dark:text-slate-200 ml-4 tracking-wider'>
         Shaxsiy sog&#39;liqni tahlil paneli
       </h2>
       <div className='mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark ml-4'>
@@ -53,7 +53,7 @@ const MainSection = () => {
                 </svg>
               </a>
             </h3>
-            <div className='prose prose-slate prose-sm text-slate-600 dark:prose-dark'>
+            <div className='prose prose-slate prose-sm text-slate-600 dark:text-slate-400 dark:prose-dark'>
               <p>Analiz natijalarini yuklab, AI yordamida chuqur tahlil va izohlarni oling.</p>
             </div>
           </div>
@@ -99,7 +99,7 @@ const MainSection = () => {
                 </svg>
               </a>
             </h3>
-            <div className='prose prose-slate prose-sm text-slate-600 dark:prose-dark'>
+            <div className='prose prose-slate prose-sm text-slate-600 dark:text-slate-400 dark:prose-dark'>
               <p>
                 O&#39;zingizning sog&#39;lig&#39;ingiz haqida yozing va AI tahlilidan foydalaning.
               </p>
