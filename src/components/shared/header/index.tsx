@@ -1,29 +1,28 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useCallback } from 'react';
 import { useUser } from '@clerk/nextjs';
 
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import useSidebarMobile from '../../../hooks/useSidebarMobile';
-import useHeaderbarMobile from '../../../hooks/useHeaderbarMobile';
+import useHeaderMobile from '../../../hooks/useHeaderMobile';
 import UserBox from '../user-box';
 import { ModeToggle } from '../mode-toggle';
-
+import { DiagnoAIIcon } from '@/components/icons/icons';
 type Props = {};
 
 const Header = (props: Props) => {
   const { user } = useUser();
   const sidebarMobile = useSidebarMobile();
-  const headerbarMobile = useHeaderbarMobile();
+  const headerMobile = useHeaderMobile();
 
   const onOpenSidebarMobile = useCallback(() => {
     sidebarMobile.onOpen();
   }, [sidebarMobile]);
 
-  const onOpenHeaderbarMobile = useCallback(() => {
-    headerbarMobile.onOpen();
-  }, [headerbarMobile]);
+  const onOpenHeaderMobile = useCallback(() => {
+    headerMobile.onOpen();
+  }, [headerMobile]);
 
   return (
     <div className='sticky top-0 z-40 w-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/60'>
@@ -32,13 +31,7 @@ const Header = (props: Props) => {
           <div className='relative flex items-center'>
             <a className='mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto' href='/'>
               <span className='sr-only'>Diagno AI</span>
-              <Image
-                src={'/corinna-ai-logo.png'}
-                alt='Logo'
-                width={200}
-                height={25}
-                className='w-[82px]'
-              />
+              <DiagnoAIIcon />
             </a>
             <div className='relative hidden lg:flex items-center ml-auto'>
               <nav className='text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200'>
@@ -107,7 +100,7 @@ const Header = (props: Props) => {
               <button
                 type='button'
                 className='text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300'
-                onClick={onOpenHeaderbarMobile}
+                onClick={onOpenHeaderMobile}
               >
                 <span className='sr-only'>Navigation</span>
                 <svg width='24' height='24' fill='none' aria-hidden='true'>

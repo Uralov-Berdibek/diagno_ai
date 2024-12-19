@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback } from 'react';
-import useHeaderbarMobile from '../../../hooks/useHeaderbarMobile';
+import useHeaderbarMobile from '../../../hooks/useHeaderMobile';
 import clsx from 'clsx';
 import { ModeToggle } from '../mode-toggle';
 

@@ -1,15 +1,15 @@
 import { create } from 'zustand';
 
-interface HeaderbarMobileStore {
+interface HeaderMobileStore {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
 }
 
-const useHeaderbarMobile = create<HeaderbarMobileStore>((set) => ({
+const useHeaderMobile = create<HeaderMobileStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
 
-export default useHeaderbarMobile;
+export default useHeaderMobile;

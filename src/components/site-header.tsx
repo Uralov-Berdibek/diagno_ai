@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import SiteLogo from '@/assets/logo.svg';
 import { CodeXml, Feather, MenuIcon, Newspaper, Wallet2 } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { ActionButton } from '@/components/action-button';
+import { LogoIcon } from '@/components/icons/icons';
 
 export default function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function SiteHeader() {
           >
             <Link href={'/'}>
               <div className={'border size-10 rounded-lg inline-flex items-center justify-center'}>
-                <SiteLogo className={'size-8 h-auto'} />
+                <LogoIcon className={'size-8 h-auto'} />
               </div>
             </Link>
             <section className={'max-md:hidden'}>
@@ -52,7 +52,7 @@ export default function SiteHeader() {
                     <div
                       className={'border size-8 rounded-lg inline-flex items-center justify-center'}
                     >
-                      <SiteLogo className={'size-6 h-auto'} />
+                      <LogoIcon className={'size-6 h-auto'} />
                     </div>
                     <p className={'font-bold'}>AI yordamida tibbiyot sohasida inqilob</p>
                   </div>
