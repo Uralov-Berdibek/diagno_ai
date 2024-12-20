@@ -1,8 +1,6 @@
 'use client';
 
 import { useLayout } from '../../../../hooks/use-layout';
-import { IFolderAndFile } from '@/types';
-import SuggestCard from '../../card/suggest-card';
 import { Table, TableBody, TableHead, TableHeader, TableRow } from '../../../ui/table';
 import Empty from '../../empty';
 import ListItem from './list-item';
@@ -59,7 +57,6 @@ const Lists = () => {
         <div className='grid grid-cols-4 gap-4 mt-4'>
           {pages.map((file) => (
             <div key={file.id}>{file.name}</div>
-            // <SuggestCard key={file.id} item={file} />
           ))}
         </div>
       ) : (
