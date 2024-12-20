@@ -1,7 +1,5 @@
-'use client';
-
 import { byteConverter } from '@/lib/utils';
-import { IFolderAndFile } from '@/types';
+import { Page } from '@/lib/api';
 import { useUser } from '@clerk/nextjs';
 import { File, Folder, Save, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -13,7 +11,7 @@ import { TableCell, TableRow } from '../../../ui/table';
 import ListAction from './list-action';
 
 interface ListItemProps {
-  item: IFolderAndFile;
+  item: Page & { size?: number };
 }
 
 const ListItem = ({ item }: ListItemProps) => {
@@ -31,7 +29,7 @@ const ListItem = ({ item }: ListItemProps) => {
       <TableCell className='font-medium'>
         {isEditing ? (
           <div className='relative'>
-            <Input ref={inputRef} value={value} />
+            <Input ref={inputRef} value={value} onChange={(e) => setValue(e.target.value)} />
             <div className='absolute right-0 top-0 h-full flex items-center space-x-1'>
               <Button size='sm' variant='outline'>
                 <Save className='w-4 h-4' />
@@ -54,14 +52,14 @@ const ListItem = ({ item }: ListItemProps) => {
       </TableCell>
       <TableCell className='flex items-center space-x-2'>
         <Avatar className='w-6 h-6'>
-          <AvatarImage src={user?.imageUrl} />
+          <AvatarImage src={user?.imageUrl || '/default-avatar.png'} />
         </Avatar>
         <span className='opacity-75'>me</span>
       </TableCell>
-      <TableCell>22.02.2024</TableCell>
+      <TableCell>{new Date(item.createDate).toLocaleString()}</TableCell>
       <TableCell>{item.size ? byteConverter(item.size) : '-'}</TableCell>
       <TableCell className='flex justify-end items-center space-x-2'>
-        <ListAction item={item} />
+        <ListAction />
       </TableCell>
     </TableRow>
   );

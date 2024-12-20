@@ -1,5 +1,5 @@
 // lib/api.ts
-interface Page {
+export interface Page {
   id: number;
   path: string;
   name: string;
@@ -43,4 +43,25 @@ export const getPage = async (id: number): Promise<Page> => {
   }
 
   return response.json();
+};
+
+export const getAllPages = async (): Promise<Page[]> => {
+  try {
+    const response = await fetch('/api/pages', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Sahifalarni olishda xatolik yuz berdi');
+    }
+
+    const data: Page[] = await response.json();
+    return data;
+  } catch (error) {
+    console.error('API chaqiruvida xatolik:', error);
+    throw error;
+  }
 };

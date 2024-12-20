@@ -9,11 +9,9 @@ interface ListActionProps {
   onStartEditing?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const ListAction = ({ item, onStartEditing }: ListActionProps) => {
+const ListAction = () => {
   const { refresh } = useRouter();
   const { documentId } = useParams();
-
-  // const folderId = documentId as string;
   // const type = item.size ? 'files' : 'folders';
   // const ref = documentId ? doc(db, 'folders', folderId, 'files', item.id) : doc(db, type, item.id);
 
@@ -90,7 +88,7 @@ const ListAction = ({ item, onStartEditing }: ListActionProps) => {
       >
         <Trash className='w-4 h-4 opacity-50' />
       </div>
-      {item.isStar ? (
+      {/* {item.isStar ? (
         <div
           role='button'
           className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
@@ -104,7 +102,7 @@ const ListAction = ({ item, onStartEditing }: ListActionProps) => {
         >
           <Star className='w-4 h-4 opacity-50' />
         </div>
-      )}
+      )} */}
       <Popover>
         <PopoverTrigger className='flex justify-start' asChild>
           <div role='button' className='p-2 hover:bg-secondary rounded-full transition'>
@@ -123,7 +121,7 @@ const ListAction = ({ item, onStartEditing }: ListActionProps) => {
           <div
             className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm'
             role='button'
-            onClick={onStartEditing}
+            // onClick={onStartEditing}
           >
             <Pencil className='w-4 h-4' />
             <span>Rename</span>

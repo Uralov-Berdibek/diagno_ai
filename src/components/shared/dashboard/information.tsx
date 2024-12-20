@@ -2,11 +2,21 @@
 import Image from 'next/image';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { createPage } from '../../../lib/api';
 
 const Information = () => {
   // Function to generate a new UUID
   const generateNewChatId = () => {
     return uuidv4(); // Generates a unique UUID
+  };
+
+  const handleCreatePage = async () => {
+    try {
+      const page = await createPage(`/new-chat/${generateNewChatId()}`, 'New Chat');
+      console.log('Sahifa yaratildi:', page);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleNewChat = (e: React.MouseEvent<HTMLAnchorElement>) => {
