@@ -8,6 +8,7 @@ import Image from 'next/image';
 import useSidebarMobile from '../../../hooks/useSidebarMobile';
 import clsx from 'clsx';
 import { navItems } from '.';
+import { DiagnoAIIcon } from '../../icons/icons';
 
 const MobileSidebar = () => {
   const sidebarMobile = useSidebarMobile();
@@ -37,13 +38,7 @@ const MobileSidebar = () => {
             </svg>
           </button>
           <nav id='nav' className='lg:text-sm lg:leading-6 relative pb-20'>
-            <Image
-              src={'/corinna-ai-logo.png'}
-              alt='Logo'
-              width={200}
-              height={25}
-              className='w-[120px] mb-10 -mt-2'
-            />
+            <DiagnoAIIcon className='md:w-[200px] md:h-[40px] w-[80px] h-[20px] mb-8' />
             <ul>
               {navItems.map((item) => (
                 <SidebarItem key={item.name} href={item.href} icon={item.icon} name={item.name} />

@@ -9,14 +9,22 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Page {
-  id         Int      @id @default(autoincrement())
+  id         String   @id @default(uuid()) @map("_id")
   path       String
   name       String
+  createDate DateTime @default(now())
+  updateDate DateTime @updatedAt
+}
+
+model Chat {
+  id         String   @id @default(uuid()) @map("_id")
+  pageId     String
+  message    String
   createDate DateTime @default(now())
   updateDate DateTime @updatedAt
 }

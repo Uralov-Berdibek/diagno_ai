@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
       const updatedPage = await prisma.page.update({
-        where: { id: Number(id) },
+        where: { id: String(id) },
         data: {
           ...(name && { name }),
           ...(path && { path }),

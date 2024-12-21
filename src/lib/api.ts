@@ -1,31 +1,50 @@
-// lib/api.ts
+import { v4 as uuidv4 } from 'uuid';
+
 export interface Page {
-  id: number;
+  id: string;
   path: string;
   name: string;
-  createDate: string;
-  updateDate: string;
+  createdAt: string;
 }
 
-export const createPage = async (path: string, name: string): Promise<Page> => {
-  const response = await fetch('/api/pages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ path, name }),
-  });
+export const createPage = async (): Promise<Page> => {
+  // Generate a unique UUID
+  const id = uuidv4();
 
-  if (!response.ok) {
-    throw new Error('Sahifa yaratishda xatolik yuz berdi');
+  // Define the path and name with the generated UUID
+  const path = `/new-chat/${id}`;
+  const name = `New Chat - ${id}`;
+
+  try {
+    const response = await fetch('/api/pages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id,
+        path,
+        name,
+        createDate: new Date().toISOString(),
+        updateDate: new Date().toISOString(),
+      }),
+    });
+
+    if (!response.ok) {
+      const errorResponse = await response.json();
+      throw new Error(errorResponse.message || 'Failed to create the page.');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error in createPage:', error);
+    throw error; // Re-throw for upstream handling
   }
-
-  return response.json();
 };
 
-export const updatePage = async (id: number, data: Partial<Page>): Promise<Page> => {
+export const updatePage = async (id: string, data: Partial<Page>): Promise<Page> => {
   const response = await fetch(`/api/pages/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: JSON.stringify({ ...data, updateDate: new Date().toISOString() }),
   });
 
   if (!response.ok) {
@@ -35,7 +54,7 @@ export const updatePage = async (id: number, data: Partial<Page>): Promise<Page>
   return response.json();
 };
 
-export const getPage = async (id: number): Promise<Page> => {
+export const getPage = async (id: string): Promise<Page> => {
   const response = await fetch(`/api/pages/${id}`);
 
   if (!response.ok) {

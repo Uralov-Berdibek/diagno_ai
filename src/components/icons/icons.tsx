@@ -144,8 +144,8 @@ export const DiagnoAIIcon: React.FC<IconProps> = (props) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 997.69135 207.6922'
-    width={200}
-    height={40}
+    width={80}
+    height={20}
     {...props}
   >
     <defs>
