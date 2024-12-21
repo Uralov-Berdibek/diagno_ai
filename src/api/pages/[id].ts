@@ -4,13 +4,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const prisma = new PrismaClient();
 
 interface UpdatePageData {
-  id?: string;
   name?: string;
   path?: string;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query;
+
+  const parsedId = typeof id === 'string' ? parseInt(id, 10) : id;
 
   if (req.method === 'PUT') {
     const { name, path }: UpdatePageData = req.body;
