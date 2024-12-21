@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const prisma = new PrismaClient();
 
 interface UpdatePageData {
+  id?: string;
   name?: string;
   path?: string;
 }
