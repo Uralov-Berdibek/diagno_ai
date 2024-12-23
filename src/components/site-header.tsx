@@ -41,7 +41,7 @@ export default function SiteHeader() {
             </section>
             <section className={'flex max-md:gap-4 items-center'}>
               <Link href={'/sign-in'}>
-                <ActionButton label={'Kirish'} />
+                <ActionButton label={'Log in'} />
               </Link>
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger>

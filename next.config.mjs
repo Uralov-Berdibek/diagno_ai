@@ -3,6 +3,14 @@ const nextConfig = {
   images: {
     domains: ['avatars.mds.yandex.net', 'miro.medium.com'], // Add hostnames here without protocol
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:3000/api/:path*', // Proxy to backend
+      },
+    ];
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

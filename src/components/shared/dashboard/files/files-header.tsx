@@ -1,17 +1,26 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import { toast } from 'sonner';
 import { v4 as uuidv4 } from 'uuid';
-const FilesHeader = () => {
-  // Function to generate a new UUID
-  const generateNewChatId = () => {
-    return uuidv4(); // Generates a unique UUID
-  };
 
-  const handleNewChat = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); // Prevents default link behavior
-    const newChatId = generateNewChatId();
-    window.location.href = `/dashboard/new-chat/${newChatId}`;
+const FilesHeader = () => {
+  const router = useRouter();
+
+  const handleNewChat = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const id = uuidv4();
+
+    try {
+      toast.info('Creating a new page, please wait...');
+      toast.success('Page created successfully! Redirecting...');
+
+      router.push(`/dashboard/new-chat/${id}`);
+    } catch (error: any) {
+      console.error('Error creating page:', error.message || error);
+      toast.error('Failed to create a new page. Please try again.');
+    }
   };
   return (
     <div className='flex justify-between items-center'>

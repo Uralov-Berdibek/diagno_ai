@@ -4,27 +4,17 @@ import { useLayout } from '../../../../hooks/use-layout';
 import { Table, TableBody, TableHead, TableHeader, TableRow } from '../../../ui/table';
 import Empty from '../../empty';
 import ListItem from './list-item';
-import { getAllPages, Page } from '../../../../lib/api';
 import { useEffect, useState } from 'react';
 
 const Lists = () => {
   const { layout } = useLayout();
-  const [pages, setPages] = useState<Page[]>([]);
+  const [pages, setPages] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const hasContent = pages.length > 0;
 
   useEffect(() => {
-    const fetchPages = async () => {
-      try {
-        const data = await getAllPages();
-        setPages(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Xatolik yuz berdi');
-      } finally {
-        setLoading(false);
-      }
-    };
+    const fetchPages = async () => {};
 
     fetchPages();
   }, []);

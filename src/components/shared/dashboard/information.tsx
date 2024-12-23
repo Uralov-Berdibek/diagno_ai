@@ -2,29 +2,23 @@
 import Image from 'next/image';
 import React from 'react';
 import { toast } from 'sonner';
-import { createPage } from '../../../lib/api';
+import { useRouter } from 'next/navigation';
+import { v4 as uuidv4 } from 'uuid';
 
 const Information = () => {
+  const router = useRouter();
+
   const handleNewChat = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); // Prevent default link behavior
+    e.preventDefault();
+    const id = uuidv4();
 
     try {
-      // Display a loading toast
       toast.info('Creating a new page, please wait...');
+      toast.success('Page created successfully! Redirecting...');
 
-      // Call createPage to generate a new page on the server
-      const page = await createPage();
-
-      // Notify success
-      toast.success('Page created successfully!');
-      console.log('Page created:', page);
-
-      // Redirect the user to the new page
-      window.location.href = `/dashboard${page.path}`;
-    } catch (error) {
-      console.error('Error creating page:', error);
-
-      // Notify the user about the failure
+      router.push(`/dashboard/new-chat/${id}`);
+    } catch (error: any) {
+      console.error('Error creating page:', error.message || error);
       toast.error('Failed to create a new page. Please try again.');
     }
   };

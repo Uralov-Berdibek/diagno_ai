@@ -44,11 +44,11 @@ const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
   ];
 
   const handleSendMessage = async (content: string, type: 'text' | 'file' | 'voice') => {
-    // const slug = (await params).slug;
-    // if (!slug) {
-    //   console.error('Slug not found!');
-    //   return;
-    // }
+    const slug = (await params).slug;
+    if (!slug) {
+      console.error('Slug not found!');
+      return;
+    }
 
     setMessageSent(true);
     setResponseData({
@@ -56,18 +56,6 @@ const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
       requestContent: content,
       response: 'Sizning xabaringiz qabul qilindi.',
     });
-
-    // Send chat data to the API
-    // await fetch('/api/chats', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     path: `/new-chats/${slug}`,
-    //     title: `Chat with ID: ${slug}`,
-    //     user: 'Anonymous User', // Replace with dynamic user data
-    //     createDate: new Date().toISOString(),
-    //   }),
-    // });
   };
 
   return (
