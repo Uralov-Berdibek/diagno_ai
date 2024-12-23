@@ -1,5 +1,4 @@
 import { byteConverter } from '@/lib/utils';
-import { Page } from '@/lib/api';
 import { useUser } from '@clerk/nextjs';
 import { File, Folder, Save, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -11,7 +10,7 @@ import { TableCell, TableRow } from '../../../ui/table';
 import ListAction from './list-action';
 
 interface ListItemProps {
-  item: Page & { size?: number };
+  item: any;
 }
 
 const ListItem = ({ item }: ListItemProps) => {
