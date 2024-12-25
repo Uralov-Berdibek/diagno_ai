@@ -23,7 +23,7 @@ const ListItem = ({ item }: ListItemProps) => {
   return (
     <TableRow
       className='group cursor-pointer'
-      onClick={item.size ? undefined : () => push(`/document/${item.id}`)}
+      onClick={item.size ? undefined : () => push(`/dashboard/new-chat/${item.id}`)}
     >
       <TableCell className='font-medium'>
         {isEditing ? (
@@ -55,10 +55,17 @@ const ListItem = ({ item }: ListItemProps) => {
         </Avatar>
         <span className='opacity-75'>me</span>
       </TableCell>
-      <TableCell>{new Date(item.createDate).toLocaleString()}</TableCell>
+      <TableCell>
+        {item.createdAt &&
+          new Date(item.createdAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })}
+      </TableCell>
       <TableCell>{item.size ? byteConverter(item.size) : '-'}</TableCell>
       <TableCell className='flex justify-end items-center space-x-2'>
-        <ListAction />
+        <ListAction item={item} />
       </TableCell>
     </TableRow>
   );

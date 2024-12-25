@@ -1,28 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import { toast } from 'sonner';
-import { useRouter } from 'next/navigation';
-import { v4 as uuidv4 } from 'uuid';
 
 const Information = () => {
-  const router = useRouter();
-
-  const handleNewChat = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const id = uuidv4();
-
-    try {
-      toast.info('Creating a new page, please wait...');
-      toast.success('Page created successfully! Redirecting...');
-
-      router.push(`/dashboard/new-chat/${id}`);
-    } catch (error: any) {
-      console.error('Error creating page:', error.message || error);
-      toast.error('Failed to create a new page. Please try again.');
-    }
-  };
-
   return (
     <div className='mt-8 p-4 pb-10 bg-slate-50 flex flex-col-reverse items-start sm:mx-0 sm:p-10 sm:rounded-2xl xl:flex-row dark:bg-slate-900/25'>
       <div className='flex-auto'>
@@ -43,9 +23,8 @@ const Information = () => {
           </p>
         </div>
         <a
-          onClick={handleNewChat}
+          href='/dashboard/files'
           className='group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-slate-700 text-white hover:bg-slate-800 focus:ring-offset-2 focus:ring-offset-slate-50 focus:ring-slate-400 dark:focus:ring-offset-0 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 cursor-pointer'
-          href='#'
         >
           Yangi Chat<span className='sr-only'>, Diagno AI</span>
           <svg

@@ -14,7 +14,21 @@ const Lists = () => {
   const hasContent = pages.length > 0;
 
   useEffect(() => {
-    const fetchPages = async () => {};
+    const fetchPages = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/pages');
+        if (!response.ok) {
+          throw new Error('Failed to fetch pages');
+        }
+        const data = await response.json();
+        setPages(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
 
     fetchPages();
   }, []);

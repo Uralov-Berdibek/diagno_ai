@@ -3,106 +3,86 @@ import { Download, MoreVertical, Pencil, Star, Trash, UserPlus } from 'lucide-re
 import { useParams, useRouter } from 'next/navigation';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../ui/popover';
 import { Separator } from '../../../ui/separator';
+import { toast } from 'sonner';
 
 interface ListActionProps {
   item: IFolderAndFile;
   onStartEditing?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const ListAction = () => {
-  const { refresh } = useRouter();
-  const { documentId } = useParams();
-  // const type = item.size ? 'files' : 'folders';
-  // const ref = documentId ? doc(db, 'folders', folderId, 'files', item.id) : doc(db, type, item.id);
+const ListAction = ({ item, onStartEditing }: ListActionProps) => {
+  const router = useRouter();
+  const { workspaceId } = useParams();
 
-  // const onDelete = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-  //   e.stopPropagation();
+  const onDelete = async () => {
+    try {
+      // Add your delete API call here
+      await toast.promise(
+        // Replace with your actual delete API call
+        Promise.resolve(),
+        {
+          loading: 'Deleting...',
+          success: 'File deleted successfully',
+          error: 'Error deleting file',
+        },
+      );
+    } catch (error) {
+      console.error('Error deleting:', error);
+    }
+  };
 
-  //   const promise = setDoc(ref, {
-  //     ...item,
-  //     isArchive: true,
-  //     archivedTime: new Date(),
-  //   }).then(() => refresh());
+  const onStar = async () => {
+    try {
+      // Add your star/unstar API call here
+      await toast.promise(
+        // Replace with your actual star API call
+        Promise.resolve(),
+        {
+          loading: 'Updating...',
+          success: item.isStar ? 'Removed from starred' : 'Added to starred',
+          error: 'Error updating starred status',
+        },
+      );
+    } catch (error) {
+      console.error('Error starring:', error);
+    }
+  };
 
-  //   toast.promise(promise, {
-  //     loading: 'Loading...',
-  //     success: 'Archived!',
-  //     error: 'Failed to archive.',
-  //   });
-  // };
-
-  // const onAddStar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-  //   e.stopPropagation();
-
-  //   const promise = setDoc(ref, {
-  //     ...item,
-  //     isStar: true,
-  //   }).then(() => refresh());
-
-  //   toast.promise(promise, {
-  //     loading: 'Loading...',
-  //     success: 'Starred!',
-  //     error: 'Failed to star.',
-  //   });
-  // };
-
-  // const onRemoveStar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-  //   e.stopPropagation();
-
-  //   const promise = setDoc(ref, {
-  //     ...item,
-  //     isStar: false,
-  //   }).then(() => refresh());
-
-  //   toast.promise(promise, {
-  //     loading: 'Loading...',
-  //     success: 'Unstarred!',
-  //     error: 'Failed to unstar.',
-  //   });
-  // };
-
-  // const onDownload = () => {
-  //   if (!item.size) {
-  //     toast.error('This is a folder, not a file.');
-  //     return;
-  //   }
-
-  //   window.open(item.image, '_blank');
-  // };
-
-  // const onShare = () => {
-  //   if (!item.size) {
-  //     toast.error("You can't share a folder");
-  //     return;
-  //   }
-
-  //   navigator.clipboard.writeText(item.image);
-  //   toast.success('Link copied to clipboard!');
-  // };
+  const onShare = async () => {
+    try {
+      // Add your share API call here
+      await toast.promise(
+        // Replace with your actual share API call
+        Promise.resolve(),
+        {
+          loading: 'Preparing share...',
+          success: 'Share link copied to clipboard',
+          error: 'Error generating share link',
+        },
+      );
+    } catch (error) {
+      console.error('Error sharing:', error);
+    }
+  };
 
   return (
     <div className='flex items-center space-x-1'>
       <div
         role='button'
+        onClick={onDelete}
         className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
       >
         <Trash className='w-4 h-4 opacity-50' />
       </div>
-      {/* {item.isStar ? (
-        <div
-          role='button'
-          className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
-        >
-          <Star className='w-4 h-4 fill-yellow-400 text-yellow-400' />
-        </div>
-      ) : (
-        <div
-          role='button'
-          className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
-        >
-          <Star className='w-4 h-4 opacity-50' />
-        </div>
-      )} */}
+      <div
+        role='button'
+        onClick={onStar}
+        className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
+      >
+        <Star
+          className={`w-4 h-4 ${item.isStar ? 'fill-yellow-400 text-yellow-400' : 'opacity-50'}`}
+        />
+      </div>
       <Popover>
         <PopoverTrigger className='flex justify-start' asChild>
           <div role='button' className='p-2 hover:bg-secondary rounded-full transition'>
@@ -119,9 +99,9 @@ const ListAction = () => {
           </div>
 
           <div
+            onClick={onStartEditing}
             className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm'
             role='button'
-            // onClick={onStartEditing}
           >
             <Pencil className='w-4 h-4' />
             <span>Rename</span>
@@ -130,6 +110,7 @@ const ListAction = () => {
           <Separator />
 
           <div
+            onClick={onShare}
             className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm'
             role='button'
           >
@@ -138,7 +119,8 @@ const ListAction = () => {
           </div>
 
           <div
-            className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm'
+            onClick={onDelete}
+            className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm text-red-600'
             role='button'
           >
             <Trash className='w-4 h-4' />
