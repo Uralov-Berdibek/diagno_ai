@@ -11,72 +11,16 @@ interface ListActionProps {
 }
 
 const ListAction = ({ item, onStartEditing }: ListActionProps) => {
-  const router = useRouter();
-  const { workspaceId } = useParams();
-
-  const onDelete = async () => {
-    try {
-      // Add your delete API call here
-      await toast.promise(
-        // Replace with your actual delete API call
-        Promise.resolve(),
-        {
-          loading: 'Deleting...',
-          success: 'File deleted successfully',
-          error: 'Error deleting file',
-        },
-      );
-    } catch (error) {
-      console.error('Error deleting:', error);
-    }
-  };
-
-  const onStar = async () => {
-    try {
-      // Add your star/unstar API call here
-      await toast.promise(
-        // Replace with your actual star API call
-        Promise.resolve(),
-        {
-          loading: 'Updating...',
-          success: item.isStar ? 'Removed from starred' : 'Added to starred',
-          error: 'Error updating starred status',
-        },
-      );
-    } catch (error) {
-      console.error('Error starring:', error);
-    }
-  };
-
-  const onShare = async () => {
-    try {
-      // Add your share API call here
-      await toast.promise(
-        // Replace with your actual share API call
-        Promise.resolve(),
-        {
-          loading: 'Preparing share...',
-          success: 'Share link copied to clipboard',
-          error: 'Error generating share link',
-        },
-      );
-    } catch (error) {
-      console.error('Error sharing:', error);
-    }
-  };
-
   return (
     <div className='flex items-center space-x-1'>
       <div
         role='button'
-        onClick={onDelete}
         className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
       >
         <Trash className='w-4 h-4 opacity-50' />
       </div>
       <div
         role='button'
-        onClick={onStar}
         className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition opacity-0 group-hover:opacity-100'
       >
         <Star
@@ -110,7 +54,6 @@ const ListAction = ({ item, onStartEditing }: ListActionProps) => {
           <Separator />
 
           <div
-            onClick={onShare}
             className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm'
             role='button'
           >
@@ -119,7 +62,6 @@ const ListAction = ({ item, onStartEditing }: ListActionProps) => {
           </div>
 
           <div
-            onClick={onDelete}
             className='flex items-center hover:bg-secondary transition py-2 px-4 space-x-2 text-sm text-red-600'
             role='button'
           >

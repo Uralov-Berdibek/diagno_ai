@@ -14,36 +14,11 @@ datasource db {
 }
 
 model Page {
-  slug        String    @id @default(uuid())
+  id        Int      @id @default(autoincrement())
   name      String
-  path      String    @unique
-  isFavorite Boolean  @default(false)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  messages  Message[]
-}
-
-model Message {
-  id        String    @id @default(uuid())
-  pageId    String
-  page      Page      @relation(fields: [pageId], references: [slug], onDelete: Cascade)
-  content   String    @db.Text
-  fileUrl   String?
-  fileType  FileType?
-  createdAt DateTime  @default(now())
-  response  Response?
-}
-
-model Response {
-  id        String   @id @default(uuid())
-  messageId String   @unique
-  message   Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  path      String   @unique
   content   String   @db.Text
+  isFavorite Boolean @default(false)
   createdAt DateTime @default(now())
-}
-
-enum FileType {
-  PDF
-  VOICE
-  TEXT
+  updatedAt DateTime @updatedAt
 }

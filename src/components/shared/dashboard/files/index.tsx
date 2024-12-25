@@ -13,25 +13,25 @@ const Lists = () => {
   const [error, setError] = useState<string | null>(null);
   const hasContent = pages.length > 0;
 
-  useEffect(() => {
-    const fetchPages = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('/api/pages');
-        if (!response.ok) {
-          throw new Error('Failed to fetch pages');
-        }
-        const data = await response.json();
-        setPages(data);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchPages = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetch('/api/pages');
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch pages');
+  //       }
+  //       const data = await response.json();
+  //       setPages(data);
+  //     } catch (err) {
+  //       setError(err instanceof Error ? err.message : 'An error occurred');
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchPages();
-  }, []);
+  //   fetchPages();
+  // }, []);
 
   return layout === 'list' ? (
     hasContent ? (
