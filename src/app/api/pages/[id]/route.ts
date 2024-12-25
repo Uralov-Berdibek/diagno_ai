@@ -1,10 +1,10 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, { params }: { params: { slug: string } }) {
   try {
     const page = await prisma.page.findUnique({
-      where: { id: params.id },
+      where: { slug: params.slug },
       include: {
         messages: {
           include: {
@@ -27,10 +27,10 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE(request: Request, { params }: { params: { slug: string } }) {
   try {
     await prisma.page.delete({
-      where: { id: params.id },
+      where: { slug: params.slug },
     });
 
     return NextResponse.json({ message: 'Page deleted successfully' });

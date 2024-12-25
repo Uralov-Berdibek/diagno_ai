@@ -38,38 +38,38 @@ export const pageApi = {
   },
 
   // Get single page
-  getPage: async (id: string) => {
-    const response = await api.get(`/pages/${id}`);
+  getPage: async (slug: string) => {
+    const response = await api.get(`/pages/${slug}`);
     return response.data;
   },
 
   // Update page name
-  updatePageName: async (id: string, name: string) => {
-    const response = await api.patch(`/pages/${id}/name`, { name });
+  updatePageName: async (slug: string, name: string) => {
+    const response = await api.patch(`/pages/${slug}/name`, { name });
     return response.data;
   },
 
   // Toggle favorite
-  toggleFavorite: async (id: string) => {
-    const response = await api.patch(`/pages/${id}/favorite`);
+  toggleFavorite: async (slug: string) => {
+    const response = await api.patch(`/pages/${slug}/favorite`);
     return response.data;
   },
 
   // Delete page
-  deletePage: async (id: string) => {
-    const response = await api.delete(`/pages/${id}`);
+  deletePage: async (slug: string) => {
+    const response = await api.delete(`/pages/${slug}`);
     return response.data;
   },
 
   // Add message to page
-  addMessage: async (pageId: string, message: MessageInput) => {
-    const response = await api.post(`/pages/${pageId}/messages`, message);
+  addMessage: async (slug: string, message: MessageInput) => {
+    const response = await api.post(`/pages/${slug}/messages`, message);
     return response.data;
   },
 
   // Get page messages
-  getPageMessages: async (pageId: string) => {
-    const response = await api.get(`/pages/${pageId}/messages`);
+  getPageMessages: async (slug: string) => {
+    const response = await api.get(`/pages/${slug}/messages`);
     return response.data;
   },
 

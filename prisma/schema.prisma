@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Page {
-  id        String    @id @default(uuid())
+  slug        String    @id @default(uuid())
   name      String
   path      String    @unique
   isFavorite Boolean  @default(false)
@@ -26,7 +26,7 @@ model Page {
 model Message {
   id        String    @id @default(uuid())
   pageId    String
-  page      Page      @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  page      Page      @relation(fields: [pageId], references: [slug], onDelete: Cascade)
   content   String    @db.Text
   fileUrl   String?
   fileType  FileType?

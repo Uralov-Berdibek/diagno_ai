@@ -1,10 +1,10 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
-export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+export async function PATCH(request: Request, { params }: { params: { slug: string } }) {
   try {
     const page = await prisma.page.findUnique({
-      where: { id: params.id },
+      where: { slug: params.slug },
     });
 
     if (!page) {
@@ -12,7 +12,7 @@ export async function PATCH(request: Request, { params }: { params: { id: string
     }
 
     const updatedPage = await prisma.page.update({
-      where: { id: params.id },
+      where: { slug: params.slug },
       data: {
         isFavorite: !page.isFavorite,
         updatedAt: new Date(),

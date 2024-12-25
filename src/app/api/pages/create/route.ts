@@ -3,14 +3,14 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { id } = await request.json();
+    const { slug } = await request.json();
 
     // Create the chat page in the database
     const page = await prisma.page.create({
       data: {
-        id,
+        slug,
         name: 'New Chat',
-        path: `/dashboard/new-chat/${id}`,
+        path: `/dashboard/new-chat/${slug}`,
       },
     });
 

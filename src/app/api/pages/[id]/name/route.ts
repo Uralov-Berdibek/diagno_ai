@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
-export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+export async function PATCH(request: Request, { params }: { params: { slug: string } }) {
   try {
     const body = await request.json();
 
@@ -10,7 +10,7 @@ export async function PATCH(request: Request, { params }: { params: { id: string
     }
 
     const page = await prisma.page.update({
-      where: { id: params.id },
+      where: { slug: params.slug },
       data: {
         name: body.name,
         updatedAt: new Date(),

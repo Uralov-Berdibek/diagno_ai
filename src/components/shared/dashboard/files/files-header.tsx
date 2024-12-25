@@ -10,7 +10,7 @@ const FilesHeader = () => {
 
   const handleNewChat = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const id = uuidv4();
+    const slug = uuidv4();
 
     try {
       toast.info('Creating a new page, please wait...');
@@ -21,7 +21,7 @@ const FilesHeader = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id }),
+        body: JSON.stringify({ slug }),
       });
 
       if (!response.ok) {
@@ -29,7 +29,7 @@ const FilesHeader = () => {
       }
 
       toast.success('Page created successfully! Redirecting...');
-      router.push(`/dashboard/new-chat/${id}`);
+      router.push(`/dashboard/new-chat/${slug}`);
     } catch (error: any) {
       console.error('Error creating page:', error.message || error);
       toast.error('Failed to create a new page. Please try again.');

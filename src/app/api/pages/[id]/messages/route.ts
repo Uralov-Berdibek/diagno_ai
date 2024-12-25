@@ -1,13 +1,13 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
+export async function POST(request: Request, { params }: { params: { slug: string } }) {
   try {
     const body = await request.json();
 
     const message = await prisma.message.create({
       data: {
-        pageId: params.id,
+        pageId: params.slug,
         content: body.content,
         fileUrl: body.fileUrl,
         fileType: body.fileType,
@@ -33,10 +33,10 @@ export async function POST(request: Request, { params }: { params: { id: string 
   }
 }
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, { params }: { params: { slug: string } }) {
   try {
     const messages = await prisma.message.findMany({
-      where: { pageId: params.id },
+      where: { pageId: params.slug },
       include: { response: true },
       orderBy: { createdAt: 'asc' },
     });
