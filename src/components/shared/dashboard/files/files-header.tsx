@@ -3,33 +3,35 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { toast } from 'sonner';
-import { v4 as uuidv4 } from 'uuid';
 
 const FilesHeader = () => {
   const router = useRouter();
 
   const handleNewChat = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const slug = uuidv4();
 
     try {
       toast.info('Creating a new page, please wait...');
 
-      // Add API call to create the page
-      // const response = await fetch('/api/pages/create', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({ slug }),
-      // });
+      const response = await fetch('/api/pages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: 'New Chat',
+          path: `/new-chat/${Date.now()}`,
+          content: '',
+        }),
+      });
 
-      // if (!response.ok) {
-      //   throw new Error('Failed to create page');
-      // }
+      if (!response.ok) {
+        throw new Error('Failed to create page');
+      }
 
+      const page = await response.json();
       toast.success('Page created successfully! Redirecting...');
-      router.push(`/dashboard/new-chat/${slug}`);
+      router.push(`/dashboard${page.path}`);
     } catch (error: any) {
       console.error('Error creating page:', error.message || error);
       toast.error('Failed to create a new page. Please try again.');
