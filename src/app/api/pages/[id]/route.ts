@@ -19,17 +19,19 @@ export async function GET(request: Request, { params }: { params: { id: string }
 // Update page
 export async function PATCH(request: Request, { params }: { params: { id: string } }) {
   try {
-    const { name, content } = await request.json();
+    const body = await request.json();
     const page = await prisma.page.update({
       where: { id: parseInt(params.id) },
-      data: { name, content },
+      data: {
+        name: body.name,
+        content: body.content,
+      },
     });
     return NextResponse.json(page);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to update page' }, { status: 500 });
   }
 }
-
 // Delete page
 export async function DELETE(request: Request, { params }: { params: { id: string } }) {
   try {
