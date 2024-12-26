@@ -24,7 +24,6 @@ export async function PATCH(request: Request, { params }: { params: { id: string
       where: { id: parseInt(params.id) },
       data: {
         name: body.name,
-        content: body.content,
       },
     });
     return NextResponse.json(page);
