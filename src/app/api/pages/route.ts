@@ -1,12 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { Page, Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 
-interface CreatePageRequest {
-  name: string;
-  path: string;
-  content: string;
-}
+// Define the shape of our request data
+type CreatePageInput = Pick<Prisma.PageCreateInput, 'name' | 'path' | 'content'>;
 
 // Get all pages
 export async function GET() {
@@ -25,15 +22,15 @@ export async function GET() {
 // Create new page
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as CreatePageRequest;
+    const body = await request.json() as CreatePageInput;
 
     const page = await prisma.page.create({
       data: {
         name: body.name,
         path: body.path,
         content: body.content,
-        isFavorite: false, // Add default value
-      },
+        isFavorite: false
+      }
     });
 
     return NextResponse.json(page);
