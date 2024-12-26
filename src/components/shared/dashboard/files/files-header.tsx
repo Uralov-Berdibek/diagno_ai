@@ -13,25 +13,8 @@ const FilesHeader = () => {
     try {
       toast.info('Creating a new page, please wait...');
 
-      const response = await fetch('/api/pages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: 'New Chat',
-          path: `/new-chat/${Date.now()}`,
-          content: '',
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to create page');
-      }
-
-      const page = await response.json();
       toast.success('Page created successfully! Redirecting...');
-      router.push(`/dashboard${page.path}`);
+      router.push(`/dashboard/new-chat/${Date.now()}`);
     } catch (error: any) {
       console.error('Error creating page:', error.message || error);
       toast.error('Failed to create a new page. Please try again.');
