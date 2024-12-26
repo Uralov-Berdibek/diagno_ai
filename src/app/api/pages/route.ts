@@ -5,7 +5,9 @@ import { prisma } from '@/lib/db';
 export async function GET() {
   try {
     const pages = await prisma.page.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: {
+        id: 'desc',
+      },
     });
     return NextResponse.json(pages);
   } catch (error) {
