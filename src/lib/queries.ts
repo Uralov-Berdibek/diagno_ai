@@ -9,10 +9,9 @@ export interface Page {
   id: number;
   name: string;
   path: string;
-  content: string;
   isFavorite: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 // Get all pages
@@ -28,7 +27,7 @@ export const getPage = async (id: number) => {
 };
 
 // Create new page
-export const createPage = async (data: { name: string; path: string; content: string }) => {
+export const createPage = async (data: { name: string; path: string }) => {
   const response = await axios.post(`${apiUrl}/pages`, data);
   return response.data;
 };

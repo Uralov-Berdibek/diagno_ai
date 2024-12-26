@@ -3,7 +3,7 @@ import { prisma } from '@/lib/db';
 import { Prisma } from '@prisma/client';
 
 // Define the shape of our request data
-type CreatePageInput = Pick<Prisma.PageCreateInput, 'name' | 'path' | 'content'>;
+type CreatePageInput = Pick<Prisma.PageCreateInput, 'name' | 'path' >;
 
 // Get all pages
 export async function GET() {
@@ -28,7 +28,6 @@ export async function POST(request: Request) {
       data: {
         name: body.name,
         path: body.path,
-        content: body.content,
         isFavorite: false
       }
     });
