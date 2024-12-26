@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { Prisma } from '@prisma/client';
 
 // Get all pages
 export async function GET() {
@@ -18,10 +19,18 @@ export async function GET() {
 // Create new page
 export async function POST(request: Request) {
   try {
-    const { name, path, content } = await request.json();
+    const body = await request.json();
+
+    const pageData: Prisma.PageCreateInput = {
+      name: body.name,
+      path: body.path,
+      content: body.content,
+    };
+
     const page = await prisma.page.create({
-      data: { name, path, content },
+      data: pageData,
     });
+
     return NextResponse.json(page);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to create page' }, { status: 500 });
