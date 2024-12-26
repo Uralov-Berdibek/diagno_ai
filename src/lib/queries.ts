@@ -34,7 +34,7 @@ export const createPage = async (data: { name: string; path: string; content: st
 };
 
 // Update page
-export const updatePage = async (id: number, data: { name?: string; content?: string }) => {
+export const updatePage = async (id: number, data: { name?: string }) => {
   const response = await axios.patch(`${apiUrl}/pages/${id}`, data);
   return response.data;
 };
@@ -42,11 +42,5 @@ export const updatePage = async (id: number, data: { name?: string; content?: st
 // Delete page
 export const deletePage = async (id: number) => {
   const response = await axios.delete(`${apiUrl}/pages/${id}`);
-  return response.data;
-};
-
-// Toggle favorite
-export const toggleFavorite = async (id: number, isFavorite: boolean) => {
-  const response = await axios.patch(`${apiUrl}/pages/${id}/favorite`, { isFavorite });
   return response.data;
 };
