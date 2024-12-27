@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { toast } from 'sonner';
+import { v4 as uuidv4 } from 'uuid';
 
 const FilesHeader = () => {
   const router = useRouter();
@@ -11,13 +12,33 @@ const FilesHeader = () => {
     e.preventDefault();
 
     try {
-      toast.info('Creating a new page, please wait...');
+      toast.loading('Creating a new page...');
 
-      toast.success('Page created successfully! Redirecting...');
-      router.push(`/dashboard/new-chat/${Date.now()}`);
+      const slug = uuidv4(); // Generate unique ID
+
+      const response = await fetch('/api/pages/create-page', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ slug }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to create page');
+      }
+
+      toast.dismiss();
+      toast.success('Page created successfully!');
+
+      // Navigate to the new page using the path from the response
+      router.push(`/dashboard/${data.data.path}`);
     } catch (error: any) {
-      console.error('Error creating page:', error.message || error);
+      toast.dismiss();
       toast.error('Failed to create a new page. Please try again.');
+      console.error('Error creating page:', error.message || error);
     }
   };
   return (
