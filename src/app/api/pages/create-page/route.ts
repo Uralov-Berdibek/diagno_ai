@@ -1,8 +1,7 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
-import { Prisma } from '@prisma/client';
+import { Page } from '@prisma/client';
 
-// Define the expected request body type
 type CreatePageRequest = {
   slug: string;
 };
@@ -15,16 +14,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ status: 'error', message: 'Slug is required' }, { status: 400 });
     }
 
-    // Use Prisma's type for page creation
-    const pageData: Prisma.PageCreateInput = {
-      name: `untitled ${slug}`,
-      path: `new-chat/${slug}`,
-      isFavorite: false,
-      content: Prisma.JsonNull, // or {} if you want an empty object
-    };
-
     const newPage = await prisma.page.create({
-      data: pageData,
+      data: {
+        name: `untitled ${slug}`,
+        path: `new-chat/${slug}`,
+        content: {},
+      },
     });
 
     return NextResponse.json({
