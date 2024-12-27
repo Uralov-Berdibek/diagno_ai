@@ -8,8 +8,6 @@ export const query = {
         data: {
           name: `untitled ${slug}`,
           path: `new-chat/${slug}`,
-          isFavorite: false,
-          content: {},
         },
       });
     } catch (error) {
