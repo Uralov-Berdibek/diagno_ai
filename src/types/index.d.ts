@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { ReactNode } from 'react';
 
 export interface ChildProps {
@@ -10,14 +11,12 @@ export interface DocIdProps {
   };
 }
 
-export interface IFolderAndFile {
-  id: string;
+export type PageResponse = {
+  id: number;
   name: string;
-  uid: string;
-  timestamp: string;
-  image: string;
-  type: string;
-  size: number;
-  isStar: boolean;
-  archivedTime: string;
-}
+  path: string;
+  isFavorite: boolean;
+  content: Prisma.JsonValue | null;
+  createdAt: Date;
+  updatedAt: Date;
+};

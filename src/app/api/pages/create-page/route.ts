@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
+import { PageResponse } from '../../../../types';
 
 export async function POST(request: Request) {
   try {
@@ -13,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     // Create new page with default values
-    const newPage = await prisma.page.create({
+    const newPage: PageResponse = await prisma.page.create({
       data: {
         name: `untitled ${slug}`,
         path: `new-chat/${slug}`,
@@ -34,13 +35,13 @@ export async function POST(request: Request) {
     if (error instanceof Error && error.message.includes('Prisma')) {
       return NextResponse.json(
         { status: 'error', message: 'Database error occurred' },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json(
       { status: 'error', message: 'Failed to create page' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

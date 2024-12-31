@@ -1,16 +1,8 @@
-import { IFolderAndFile } from '@/types';
 import { Download, MoreVertical, Pencil, Star, Trash, UserPlus } from 'lucide-react';
-import { useParams, useRouter } from 'next/navigation';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../ui/popover';
 import { Separator } from '../../../ui/separator';
-import { toast } from 'sonner';
 
-interface ListActionProps {
-  item: IFolderAndFile;
-  onStartEditing?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-}
-
-const ListAction = ({ item, onStartEditing }: ListActionProps) => {
+const ListAction = ({ item, onStartEditing }: any) => {
   return (
     <div className='flex items-center space-x-1'>
       <div
