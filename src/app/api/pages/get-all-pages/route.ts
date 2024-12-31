@@ -14,7 +14,6 @@ export async function GET() {
     const safePages: Page[] = pages.map((page) => ({
       ...page,
       content: typeof page.content === 'object' ? page.content : null,
-      isFavorite: Boolean(page.isFavorite),
       createdAt: new Date(page.createdAt),
       updatedAt: new Date(page.updatedAt),
     }));

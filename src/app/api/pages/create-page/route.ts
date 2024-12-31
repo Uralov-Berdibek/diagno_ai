@@ -32,7 +32,6 @@ export async function POST(request: Request) {
     const safePage: Page = {
       ...newPage,
       content: typeof newPage.content === 'object' ? newPage.content : null,
-      isFavorite: Boolean(newPage.isFavorite),
       createdAt: new Date(newPage.createdAt),
       updatedAt: new Date(newPage.updatedAt),
     };
