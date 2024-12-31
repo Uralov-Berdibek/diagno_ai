@@ -8,10 +8,18 @@ export const query = {
         data: {
           name: `untitled ${slug}`,
           path: `new-chat/${slug}`,
+          isFavorite: false,
+          content: {},
         },
       });
     } catch (error) {
       console.error('Create page query error:', error);
+
+      // Add specific error type handling
+      if (error instanceof Error && error.message.includes('Prisma')) {
+        throw new Error('Database validation error while creating page.');
+      }
+
       throw error;
     }
   },
@@ -26,7 +34,9 @@ export const query = {
       });
     } catch (error) {
       console.error('Get all pages query error:', error);
-      throw error;
+
+      // Handle errors more specifically
+      throw new Error('Failed to retrieve pages. Please try again later.');
     }
   },
 };

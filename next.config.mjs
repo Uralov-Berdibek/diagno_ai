@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   images: {
     domains: ['avatars.mds.yandex.net', 'miro.medium.com'], // Add hostnames here without protocol
   },

@@ -5,43 +5,59 @@ import { Table, TableBody, TableHead, TableHeader, TableRow } from '../../../ui/
 import Empty from '../../empty';
 import ListItem from './list-item';
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
+
+interface Page {
+  id: number;
+  name: string;
+  path: string;
+  comment: {};
+  isFavorite: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
 
 const Lists = () => {
   const { layout } = useLayout();
-  const [pages, setPages] = useState<any[]>([]);
+  const [pages, setPages] = useState<Page[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const hasContent = pages.length > 0;
 
-  // useEffect(() => {
-  //   const fetchPages = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const response = await fetch('/api/pages');
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch pages');
-  //       }
-  //       const data = await response.json();
-  //       setPages(data);
-  //     } catch (err) {
-  //       setError(err instanceof Error ? err.message : 'An error occurred');
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/pages/get-all-pages');
+        const result = await response.json();
 
-  //   fetchPages();
-  // }, []);
+        if (!response.ok) {
+          throw new Error(result.message || 'Failed to fetch pages');
+        }
+
+        setPages(result.data);
+      } catch (error) {
+        console.error('Error fetching pages:', error);
+        toast.error('Failed to load pages');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPages();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return layout === 'list' ? (
-    hasContent ? (
+    pages.length > 0 ? (
       <Table className='mt-4'>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Owner</TableHead>
-            <TableHead>Created at</TableHead>
-            <TableHead>File size</TableHead>
+            <TableHead>Fayl Nomi</TableHead>
+            <TableHead>Foydalanuvchi</TableHead>
+            <TableHead>Yaratilgan vaqti</TableHead>
+            <TableHead>Hajmi</TableHead>
             <TableHead className='text-right'>Actions</TableHead>
           </TableRow>
         </TableHeader>
@@ -56,11 +72,11 @@ const Lists = () => {
     )
   ) : (
     <div>
-      <div className='text-sm opacity-70 mt-6'>Suggested</div>
+      <div className='text-sm opacity-70 mt-6'>Pages</div>
       {pages.length > 0 ? (
         <div className='grid grid-cols-4 gap-4 mt-4'>
-          {pages.map((file) => (
-            <div key={file.id}>{file.name}</div>
+          {pages.map((page) => (
+            <div key={page.id}>{page.name}</div>
           ))}
         </div>
       ) : (
