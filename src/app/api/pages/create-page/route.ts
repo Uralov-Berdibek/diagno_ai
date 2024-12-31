@@ -1,30 +1,32 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
-import { PageResponse } from '@/types';
+import type { CreatePageRequest, Page } from '@/types';
 
 export async function POST(request: Request) {
   try {
-    const { slug } = (await request.json()) as { slug: string };
+    const { slug } = (await request.json()) as CreatePageRequest;
 
     if (!slug) {
       return NextResponse.json({ status: 'error', message: 'Slug is required' }, { status: 400 });
     }
 
-    const newPage = await prisma.page.create({
+    // Create the page with minimal required fields
+    const page = await prisma.page.create({
       data: {
         name: `untitled ${slug}`,
         path: `new-chat/${slug}`,
-        // Let Prisma handle defaults for isFavorite and content
       },
     });
 
-    // Transform dates to ensure consistency
-    const safePage: PageResponse = {
-      ...newPage,
-      content: newPage.content || {},
-      isFavorite: !!newPage.isFavorite,
-      createdAt: new Date(newPage.createdAt),
-      updatedAt: new Date(newPage.updatedAt),
+    // Transform to safe page object
+    const safePage: Page = {
+      id: page.id,
+      name: page.name,
+      path: page.path,
+      isFavorite: false,
+      content: null,
+      createdAt: new Date(page.createdAt),
+      updatedAt: new Date(page.updatedAt),
     };
 
     return NextResponse.json({

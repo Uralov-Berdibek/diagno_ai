@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/db';
 import { NextResponse } from 'next/server';
-import { PageResponse } from '@/types';
+import { Page } from '@/types';
 
 export async function GET() {
   try {
@@ -11,10 +11,10 @@ export async function GET() {
     });
 
     // Transform the data to ensure consistent types
-    const safePages: PageResponse[] = pages.map(page => ({
+    const safePages: Page[] = pages.map((page) => ({
       ...page,
-      content: page.content || {},
-      isFavorite: !!page.isFavorite,
+      content: typeof page.content === 'object' ? page.content : null,
+      isFavorite: Boolean(page.isFavorite),
       createdAt: new Date(page.createdAt),
       updatedAt: new Date(page.updatedAt),
     }));
@@ -31,7 +31,7 @@ export async function GET() {
         message: 'Failed to fetch pages',
         data: [],
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
