@@ -18,7 +18,7 @@ export interface Page {
   name: string;
   path: string;
   isFavorite: boolean;
-  content: Record<string, any> | null;
+  content: Prisma.JsonValue | null;
   createdAt: Date;
   updatedAt: Date;
 }
