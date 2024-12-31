@@ -11,7 +11,7 @@ export interface DocIdProps {
   };
 }
 
-export type PageResponse = {
+export interface PageResponse {
   id: number;
   name: string;
   path: string;
