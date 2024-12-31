@@ -15,8 +15,8 @@ export interface PageResponse {
   id: number;
   name: string;
   path: string;
-  isFavorite: boolean;
-  content: Prisma.JsonValue | null;
-  createdAt: Date;
-  updatedAt: Date;
+  isFavorite?: boolean;
+  content?: Prisma.JsonValue | null;
+  createdAt?: Date;
+  updatedAt?: Date;
 };
