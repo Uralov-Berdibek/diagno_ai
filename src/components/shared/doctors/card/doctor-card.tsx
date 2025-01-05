@@ -50,11 +50,11 @@ export default function DoctorCard({
       </CardHeader>
 
       {/* Main Content Section */}
-      <CardContent className='px-6 py-4 space-y-3'>
+      {/* <CardContent className='px-6 py-4 space-y-3'>
         <p className='text-base text-gray-700 dark:text-gray-300'>
           <span className='font-semibold'>Specialty:</span> {specialty}
         </p>
-      </CardContent>
+      </CardContent> */}
 
       {/* Footer with Icons */}
       <CardFooter className='flex justify-evenly items-center bg-gray-100 dark:bg-slate-900 py-3'>

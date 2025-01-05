@@ -145,7 +145,7 @@ const doctors = [
   },
   {
     id: 10,
-    name: 'Dr. Patricia Robinson',
+    name: 'Dr. Patricia Ronny',
     specialty: 'Psychiatry',
     profileImage: '/female.png',
     contact1: '123-456-7808',

@@ -12,7 +12,7 @@ const FilesHeader = () => {
     e.preventDefault();
 
     try {
-      toast.loading('Creating a new page...');
+      // toast.loading('Creating a new page...');
 
       const slug = uuidv4(); // Generate unique ID
 
