@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 type SidebarItemProps = {
@@ -11,7 +12,7 @@ const SidebarItem = ({ name, href, icon }: SidebarItemProps) => {
   return (
     <div>
       <li>
-        <a
+        <Link
           className='group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400'
           href={href}
         >
@@ -19,7 +20,7 @@ const SidebarItem = ({ name, href, icon }: SidebarItemProps) => {
             {icon}
           </div>
           {name}
-        </a>
+        </Link>
       </li>
     </div>
   );

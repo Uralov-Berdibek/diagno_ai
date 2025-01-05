@@ -4,8 +4,8 @@ import SidebarItem from './sidebar-item';
 import Documentation from './documentation';
 import {
   ComunityIcon,
+  CubeIcon,
   DocumentationIcon,
-  PlaygroundIcon,
   ResourcesIcon,
   ScreencastsIcon,
   TemplatesIcon,
@@ -16,18 +16,18 @@ type Props = {};
 export const navItems = [
   {
     name: 'Dashboard',
-    href: '/dashboard',
+    href: '/dashboard', // Full path
     icon: <DocumentationIcon />,
   },
   {
     name: 'Files',
-    href: '/dashboard/files',
-    icon: <TemplatesIcon />,
+    href: '/dashboard/files', // Full path
+    icon: <CubeIcon />,
   },
-  { name: 'Trening', href: '/screencasts', icon: <ScreencastsIcon /> },
-  { name: 'Playground', href: '/playgraund', icon: <PlaygroundIcon /> },
+  { name: 'Doctors', href: '/dashboard/doctors', icon: <TemplatesIcon /> }, // Full path
+  { name: 'Trening', href: '/dashboard/screencasts', icon: <ScreencastsIcon /> },
   { name: 'Resurslar', href: '/dashboard/resources', icon: <ResourcesIcon /> },
-  { name: 'Community', href: '/resources', icon: <ComunityIcon /> },
+  { name: 'Community', href: '/dashboard/resources', icon: <ComunityIcon /> },
 ];
 
 const Sidebar = (props: Props) => {

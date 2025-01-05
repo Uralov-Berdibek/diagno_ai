@@ -16,25 +16,11 @@ const FilesHeader = () => {
 
       const slug = uuidv4(); // Generate unique ID
 
-      const response = await fetch('/api/pages/create-page', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ slug }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to create page');
-      }
-
       toast.dismiss();
       toast.success('Page created successfully!');
 
       // Navigate to the new page using the path from the response
-      router.push(`/dashboard/${data.data.path}`);
+      router.push(`/dashboard/new-chat/${slug}`);
     } catch (error: any) {
       toast.dismiss();
       toast.error('Failed to create a new page. Please try again.');

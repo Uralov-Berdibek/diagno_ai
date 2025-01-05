@@ -69,19 +69,7 @@ const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
               requestContent={responseData.requestContent}
               response={responseData.response}
             />
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ml-4'>
-              {doctors.map((doctor, index) => (
-                <DoctorCard
-                  key={index}
-                  name={doctor.name}
-                  workplace={doctor.workplace}
-                  specialty={doctor.specialty}
-                  phone={doctor.phone}
-                  email={doctor.email}
-                  profileImage={doctor.profileImage}
-                />
-              ))}
-            </div>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ml-4'></div>
           </>
         )}
       </div>

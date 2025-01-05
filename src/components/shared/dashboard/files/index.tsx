@@ -26,14 +26,6 @@ const Lists = () => {
     const fetchPages = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/pages/get-all-pages');
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(result.message || 'Failed to fetch pages');
-        }
-
-        setPages(result.data);
       } catch (error) {
         console.error('Error fetching pages:', error);
         toast.error('Failed to load pages');

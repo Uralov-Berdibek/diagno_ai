@@ -32,7 +32,7 @@ const HeaderMobile = () => {
               ></path>
             </svg>
           </button>
-          <ul className='space-y-6'>
+          {/* <ul className='space-y-6'>
             <li>
               <a className='hover:text-sky-500 dark:hover:text-sky-400' href='/docs/installation'>
                 Doctors
@@ -64,7 +64,7 @@ const HeaderMobile = () => {
                 GitHub
               </a>
             </li>
-          </ul>
+          </ul> */}
           <div className='mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10'>
             <div className='flex items-center justify-between'>
               <label htmlFor='theme' className='text-slate-700 font-normal dark:text-slate-400'>

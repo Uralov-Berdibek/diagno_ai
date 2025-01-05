@@ -35,7 +35,7 @@ const Header = (props: Props) => {
             </a>
             <div className='relative hidden lg:flex items-center ml-auto'>
               <nav className='text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200'>
-                <ul className='flex space-x-8'>
+                {/* <ul className='flex space-x-8'>
                   <li>
                     <a
                       className='hover:text-sky-500 dark:hover:text-sky-400'
@@ -62,7 +62,7 @@ const Header = (props: Props) => {
                       Showcase
                     </a>
                   </li>
-                </ul>
+                </ul> */}
               </nav>
               <div className='flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800'>
                 <ModeToggle />
