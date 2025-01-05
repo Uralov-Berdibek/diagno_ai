@@ -29,7 +29,7 @@ export default function DoctorCard({
   website,
 }: DoctorCardProps) {
   return (
-    <Card className='w-full max-w-xs mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:scale-105 transition-all duration-300'>
+    <Card className='w-full max-w-xs mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-lg transition-all duration-300'>
       {/* Header with Doctor Image */}
       <CardHeader className='flex flex-col items-center space-y-4 py-6'>
         <Image

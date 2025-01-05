@@ -16,7 +16,7 @@ const FilesHeader = () => {
 
       const slug = uuidv4(); // Generate unique ID
 
-      toast.dismiss();
+      // toast.dismiss();
       toast.success('Page created successfully!');
 
       // Navigate to the new page using the path from the response

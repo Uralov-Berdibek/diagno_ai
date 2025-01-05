@@ -4,9 +4,8 @@ import React, { useState } from 'react';
 import SendMessages from '../../../../components/shared/dashboard/send-messages';
 import Response from '../../../../components/shared/dashboard/response';
 import DoctorCard from '../../../../components/shared/doctors/card/doctor-card';
-import { useParams } from 'next/navigation';
-
-const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
+import doctors from '../../../../components/shared/doctors/data';
+const NewChatPage = ({ params }: { params: Promise<{ slag: string }> }) => {
   const [messageSent, setMessageSent] = useState(false);
   const [responseData, setResponseData] = useState({
     requestType: '',
@@ -14,38 +13,9 @@ const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     response: '',
   });
 
-  // Example doctor data
-  const doctors = [
-    {
-      name: 'Dr. John Doe',
-      workplace: 'City Hospital',
-      specialty: 'Cardiologist',
-      phone: '123-456-7890',
-      email: 'johndoe@example.com',
-      profileImage: 'path/to/image.jpg',
-    },
-    {
-      name: 'Dr. John Doe',
-      workplace: 'City Hospital',
-      specialty: 'Cardiologist',
-      phone: '123-456-7890',
-      email: 'johndoe@example.com',
-      profileImage: 'path/to/image.jpg',
-    },
-    {
-      name: 'Dr. John Doe',
-      workplace: 'City Hospital',
-      specialty: 'Cardiologist',
-      phone: '123-456-7890',
-      email: 'johndoe@example.com',
-      profileImage: 'path/to/image.jpg',
-    },
-    // Add more doctor objects as needed
-  ];
-
   const handleSendMessage = async (content: string, type: 'text' | 'file' | 'voice') => {
-    const slug = (await params).slug;
-    if (!slug) {
+    const slag = (await params).slag;
+    if (!slag) {
       console.error('Slug not found!');
       return;
     }
@@ -69,7 +39,20 @@ const NewChatPage = ({ params }: { params: Promise<{ slug: string }> }) => {
               requestContent={responseData.requestContent}
               response={responseData.response}
             />
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ml-4'></div>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ml-4 mt-6'>
+              {doctors.slice(4).map((doctor) => (
+                <DoctorCard
+                  key={doctor.id}
+                  name={doctor.name}
+                  clinic={doctor.clinic}
+                  specialty={doctor.specialty}
+                  contact1={doctor.contact1}
+                  email={doctor.email}
+                  image={doctor.profileImage}
+                  website='www.ai-diagno.netlify.app'
+                />
+              ))}
+            </div>
           </>
         )}
       </div>
