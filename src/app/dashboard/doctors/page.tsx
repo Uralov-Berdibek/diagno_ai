@@ -7,7 +7,7 @@ const DoctorsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('All');
   const [filter, setFilter] = useState('');
-  const [visibleCount, setVisibleCount] = useState(4);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -60,11 +60,21 @@ const DoctorsPage = () => {
             onChange={handleCategoryChange}
             className='w-full p-2 border border-gray-300 rounded bg-transparent'
           >
-            <option value='All'>All Categories</option>
-            <option value='Cardiology'>Cardiology</option>
-            <option value='Pediatrics'>Pediatrics</option>
-            <option value='Neurology'>Neurology</option>
-            <option value='Orthopedics'>Orthopedics</option>
+            <option className='bg-slate-800 text-white' value='All'>
+              All Categories
+            </option>
+            <option className='bg-slate-800 text-white' value='Cardiology'>
+              Cardiology
+            </option>
+            <option className='bg-slate-800 text-white' value='Pediatrics'>
+              Pediatrics
+            </option>
+            <option className='bg-slate-800 text-white' value='Neurology'>
+              Neurology
+            </option>
+            <option className='bg-slate-800 text-white' value='Orthopedics'>
+              Orthopedics
+            </option>
           </select>
 
           {/* Filter */}
@@ -73,15 +83,21 @@ const DoctorsPage = () => {
             onChange={handleFilterChange}
             className='w-full p-2 border border-gray-300 rounded bg-transparent'
           >
-            <option value=''>Filter By</option>
-            <option value='experience'>Experience</option>
-            <option value='rating'>Rating</option>
+            <option className='bg-slate-800 text-white' value=''>
+              Filter By
+            </option>
+            <option className='bg-slate-800 text-white' value='experience'>
+              Experience
+            </option>
+            <option className='bg-slate-800 text-white' value='rating'>
+              Rating
+            </option>
           </select>
         </div>
       </div>
 
       {/* Middle Section */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
         {filteredDoctors.slice(0, visibleCount).map((doctor) => (
           <DoctorCard
             key={doctor.id}

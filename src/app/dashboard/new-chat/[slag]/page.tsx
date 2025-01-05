@@ -39,7 +39,7 @@ const NewChatPage = ({ params }: { params: Promise<{ slag: string }> }) => {
               requestContent={responseData.requestContent}
               response={responseData.response}
             />
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ml-4 mt-6'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ml-4 mt-6'>
               {doctors.slice(4).map((doctor) => (
                 <DoctorCard
                   key={doctor.id}

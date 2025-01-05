@@ -12,14 +12,13 @@ const FilesHeader = () => {
     e.preventDefault();
 
     try {
-      // toast.loading('Creating a new page...');
+      toast.loading('Creating a new page...');
 
       const slug = uuidv4(); // Generate unique ID
 
-      // toast.dismiss();
+      toast.dismiss();
       toast.success('Page created successfully!');
 
-      // Navigate to the new page using the path from the response
       router.push(`/dashboard/new-chat/${slug}`);
     } catch (error: any) {
       toast.dismiss();
@@ -30,7 +29,7 @@ const FilesHeader = () => {
   return (
     <div className='flex justify-between items-center'>
       <h3 className='mb-4 text-lg leading-6 font-semibold text-slate-800 dark:text-white'>
-        Diagno AI-dan foydalanish tarixi
+        Foydalanish tarixi.
       </h3>
       <a
         onClick={handleNewChat}
