@@ -25,7 +25,7 @@ export const navItems = [
     icon: <CubeIcon />,
   },
   { name: 'Shifokorlar', href: '/dashboard/doctors', icon: <TemplatesIcon /> }, // Full path
-  { name: 'Ta’lim', href: '/dashboard/screencasts', icon: <ScreencastsIcon /> },
+  { name: 'Ta’lim', href: '/dashboard/trenning', icon: <ScreencastsIcon /> },
   { name: 'Manbalar', href: '/dashboard/resources', icon: <ResourcesIcon /> },
   { name: 'Muloqot', href: '/dashboard/resources', icon: <ComunityIcon /> },
 ];

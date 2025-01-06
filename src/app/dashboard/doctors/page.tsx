@@ -60,19 +60,34 @@ const DoctorsPage = () => {
             onChange={handleCategoryChange}
             className='w-full p-2 border border-gray-300 rounded bg-transparent'
           >
-            <option className='bg-slate-800 text-white' value='All'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='All'
+            >
               All Categories
             </option>
-            <option className='bg-slate-800 text-white' value='Cardiology'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='Cardiology'
+            >
               Cardiology
             </option>
-            <option className='bg-slate-800 text-white' value='Pediatrics'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='Pediatrics'
+            >
               Pediatrics
             </option>
-            <option className='bg-slate-800 text-white' value='Neurology'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='Neurology'
+            >
               Neurology
             </option>
-            <option className='bg-slate-800 text-white' value='Orthopedics'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='Orthopedics'
+            >
               Orthopedics
             </option>
           </select>
@@ -83,13 +98,22 @@ const DoctorsPage = () => {
             onChange={handleFilterChange}
             className='w-full p-2 border border-gray-300 rounded bg-transparent'
           >
-            <option className='bg-slate-800 text-white' value=''>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value=''
+            >
               Filter By
             </option>
-            <option className='bg-slate-800 text-white' value='experience'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='experience'
+            >
               Experience
             </option>
-            <option className='bg-slate-800 text-white' value='rating'>
+            <option
+              className='bg-gray-50 text-slate-900 dark:bg-slate-800 dark:text-white'
+              value='rating'
+            >
               Rating
             </option>
           </select>
