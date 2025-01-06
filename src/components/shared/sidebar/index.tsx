@@ -20,14 +20,14 @@ export const navItems = [
     icon: <DocumentationIcon />,
   },
   {
-    name: 'Files',
+    name: 'Chat Sahifalar',
     href: '/dashboard/files', // Full path
     icon: <CubeIcon />,
   },
-  { name: 'Doctors', href: '/dashboard/doctors', icon: <TemplatesIcon /> }, // Full path
-  { name: 'Trening', href: '/dashboard/screencasts', icon: <ScreencastsIcon /> },
-  { name: 'Resurslar', href: '/dashboard/resources', icon: <ResourcesIcon /> },
-  { name: 'Community', href: '/dashboard/resources', icon: <ComunityIcon /> },
+  { name: 'Shifokorlar', href: '/dashboard/doctors', icon: <TemplatesIcon /> }, // Full path
+  { name: 'Ta’lim', href: '/dashboard/screencasts', icon: <ScreencastsIcon /> },
+  { name: 'Manbalar', href: '/dashboard/resources', icon: <ResourcesIcon /> },
+  { name: 'Muloqot', href: '/dashboard/resources', icon: <ComunityIcon /> },
 ];
 
 const Sidebar = (props: Props) => {
