@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Footer from '../../../components/shared/footer';
 
 type Video = {
   id: string;
@@ -184,6 +185,8 @@ const TrenningPage: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <Footer />
     </div>
   );
 };

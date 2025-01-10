@@ -130,7 +130,7 @@ const ResourcesPage = (props: Props) => {
                       alt='Image'
                       className='h-full w-full'
                       width={200}
-                      height={200}
+                      height={40}
                     />
                   </div>
                 </div>
@@ -143,8 +143,8 @@ const ResourcesPage = (props: Props) => {
             </h2>
             <div className='mb-10 prose prose-slate text-slate-600 max-w-3xl dark:prose-dark'>
               <p>
-                Tailwind isn’t the only open-source project we maintain. We’ve made a few other
-                resources to help you with your design and development workflow.
+                Tailwind isn&#39t the only open-source project we maintain. We&#39ve made a few
+                other resources to help you with your design and development workflow.
               </p>
             </div>
             <ul className='grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start'>
