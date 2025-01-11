@@ -34,7 +34,7 @@ const Docs = () => {
       </h2>
       <div className='mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark ml-4'>
         <p>
-          AI yordamida tibbiy natijalar va yozuvlarni tahlil qilib, siz va oilangizning sog'ligi
+          AI yordamida tibbiy natijalar va yozuvlarni tahlil qilib, siz va oilangizning sogligi
           haqida chuqur tushuncha hosil qiling.
         </p>
       </div>
