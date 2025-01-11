@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import DoctorCard from '../../../components/shared/doctors/card/doctor-card';
 import doctors from '../../../components/shared/doctors/data'; // Import the list of 100 doctors
+import Footer from '../../../components/shared/footer';
 
 const DoctorsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,7 +23,7 @@ const DoctorsPage = () => {
   };
 
   const handleSeeMore = () => {
-    setVisibleCount((prev) => prev + 4); // Load 4 more doctors
+    setVisibleCount((prev) => prev + 3); // Load 4 more doctors
   };
 
   const filteredDoctors = doctors.filter((doctor: any) => {
@@ -147,6 +148,8 @@ const DoctorsPage = () => {
           </button>
         </div>
       )}
+
+      <Footer />
     </div>
   );
 };
