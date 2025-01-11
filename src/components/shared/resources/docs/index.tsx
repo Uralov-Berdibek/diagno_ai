@@ -30,7 +30,7 @@ const Docs = () => {
   return (
     <section className='relative'>
       <h2 className='text-slate-900 text-xl font-bold mb-3 dark:text-slate-200 ml-4 tracking-wider'>
-        Shaxsiy sog'liqni tahlil paneli
+        Shaxsiy sogliqni tahlil paneli
       </h2>
       <div className='mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark ml-4'>
         <p>
