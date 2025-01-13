@@ -5,7 +5,7 @@ type Props = {};
 const Footer = (props: Props) => {
   return (
     <footer className='text-sm leading-6 mt-16'>
-      <div className='pt-10 pb-28 border-t border-slate-200 sm:flex justify-between text-slate-500 dark:border-slate-200/5'>
+      <div className='pt-10 pb-5 border-t border-slate-200 sm:flex justify-between text-slate-500 dark:border-slate-200/5'>
         <div className='mb-6 sm:mb-0 sm:flex'>
           <p>Copyright © 2025 Diagno AI.</p>
           <p className='sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200 dark:sm:border-slate-200/5'>
