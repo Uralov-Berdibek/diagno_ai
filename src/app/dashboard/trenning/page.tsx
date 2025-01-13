@@ -89,7 +89,7 @@ const TrenningPage: React.FC = () => {
       <h1 className='text-2xl font-bold mb-4'>Training Videos</h1>
 
       {/* Filters */}
-      <div className='mb-6 flex justify-between md:flex-row gap-4 items-center'>
+      <div className='mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'>
         <input
           type='text'
           placeholder='Search videos...'
