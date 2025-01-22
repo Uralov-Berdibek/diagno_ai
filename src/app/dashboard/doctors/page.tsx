@@ -129,10 +129,7 @@ const DoctorsPage = () => {
             name={doctor.name}
             clinic={doctor.clinic}
             specialty={doctor.specialty}
-            contact1={doctor.contact1}
-            email={doctor.email}
             image={doctor.profileImage}
-            website='www.ai-diagno.netlify.app'
           />
         ))}
       </div>

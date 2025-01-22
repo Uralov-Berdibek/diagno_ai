@@ -178,8 +178,8 @@ const TrenningPage: React.FC = () => {
                 src={video.thumbnail}
                 alt={video.title}
                 width={300} // optimallashtirilgan kenglik
-                height={200} // optimallashtirilgan balandlik
-                className='rounded object-cover'
+                height={400} // optimallashtirilgan balandlik
+                className='rounded object-cover h-[200px]'
               />
             )}
             <h2 className='text-lg font-semibold mt-2 text-slate-400 uppercase'>{video.title}</h2>
