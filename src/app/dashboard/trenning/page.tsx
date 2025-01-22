@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Footer from '../../../components/shared/footer';
+import Image from 'next/image';
 
 type Video = {
   id: string;
@@ -19,7 +20,7 @@ const TrenningPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [minRating, setMinRating] = useState(0);
   const [showFavorites, setShowFavorites] = useState(false);
-  const [hoveredVideo, setHoveredVideo] = useState<string | null>(null); // Добавлено состояние
+  const [hoveredVideo, setHoveredVideo] = useState<string | null>(null);
 
   // Mock function to simulate fetching video clips
   const fetchVideos = async () => {
@@ -173,10 +174,12 @@ const TrenningPage: React.FC = () => {
                 className='rounded w-full h-[200px] object-cover'
               />
             ) : (
-              <img
+              <Image
                 src={video.thumbnail}
                 alt={video.title}
-                className='rounded w-full h-[200px] object-cover'
+                width={300} // optimallashtirilgan kenglik
+                height={200} // optimallashtirilgan balandlik
+                className='rounded object-cover'
               />
             )}
             <h2 className='text-lg font-semibold mt-2 text-slate-400 uppercase'>{video.title}</h2>

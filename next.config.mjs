@@ -2,7 +2,13 @@
 const nextConfig = {
   output: 'standalone',
   images: {
-    domains: ['avatars.mds.yandex.net', 'miro.medium.com'], // Add hostnames here without protocol
+    domains: [
+      'avatars.mds.yandex.net',
+      'miro.medium.com',
+      'improveme.se', // Added the hostname
+      'peritossolutions.com', // Add other domains as needed
+      'kazzak.pro', // Add other domains as needed
+    ],
   },
   async rewrites() {
     return [

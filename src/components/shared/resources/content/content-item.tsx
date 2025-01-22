@@ -1,5 +1,5 @@
-// content-item.tsx
 import React from 'react';
+import Image from 'next/image';
 
 type ContentItemProps = {
   title: string;
@@ -50,11 +50,16 @@ const ContentItem: React.FC<ContentItemProps> = ({
           </svg>
         </a>
       </div>
-      <img
-        src={image}
-        alt={title}
-        className='mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full'
-      />
+      <div className='mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full'>
+        <Image
+          src={image}
+          alt={title}
+          layout='responsive'
+          width={300} // rasmning kengligi (px)
+          height={200} // rasmning balandligi (px)
+          className='rounded-lg'
+        />
+      </div>
     </li>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 type AboutItemProps = {
   title: string;
@@ -51,7 +52,14 @@ const AboutItem: React.FC<AboutItemProps> = ({
       </div>
       <div className='w-full flex-none mb-10 xl:mb-0 xl:ml-8 xl:w-[29rem]'>
         <div className='aspect-w-[1216] aspect-h-[606] sm:aspect-w-[1376] sm:aspect-h-[664] shadow-lg rounded-lg bg-slate-100 overflow-hidden dark:bg-slate-800'>
-          <img src={imageUrl} alt={imageAlt} className='h-full w-full' />
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            width={1216} // Kenglik belgilangan
+            height={606} // Balandlik belgilangan
+            className='h-full w-full'
+            priority // LCP uchun optimallashtirilgan yuklash
+          />
         </div>
       </div>
     </li>
