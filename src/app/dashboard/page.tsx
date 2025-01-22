@@ -1,3 +1,4 @@
+import Contact from '../../components/shared/dashboard/contact';
 import Information from '../../components/shared/dashboard/information';
 import Footer from '../../components/shared/footer';
 import Docs from '../../components/shared/resources/docs';

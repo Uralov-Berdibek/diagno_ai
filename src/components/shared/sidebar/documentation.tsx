@@ -5,7 +5,7 @@ const Documentation = () => {
     <div className='fixed bottom-0 left-0 right-auto w-[19rem] pl-8 pr-6'>
       <a
         className='group relative px-4 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-lg font-medium text-sm grid overflow-hidden border border-white/10 shadow-lg'
-        href='/dashboard'
+        href='/dashboard/docs/'
       >
         <div className='grid gap-1 z-20'>
           <p>Diagno AI Documentation →</p>

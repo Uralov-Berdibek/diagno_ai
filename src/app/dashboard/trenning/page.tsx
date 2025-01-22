@@ -179,9 +179,8 @@ const TrenningPage: React.FC = () => {
                 className='rounded w-full h-[200px] object-cover'
               />
             )}
-            <h2 className='text-lg font-semibold mt-2 text-red-600 uppercase'>{video.title}</h2>
+            <h2 className='text-lg font-semibold mt-2 text-slate-400 uppercase'>{video.title}</h2>
             <p className='text-gray-600 text-sm'>Category: {video.category}</p>
-            <p className='text-gray-600 text-sm'>Rating: {video.rating} ⭐</p>
           </div>
         ))}
       </div>

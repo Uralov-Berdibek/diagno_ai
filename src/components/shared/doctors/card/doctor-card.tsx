@@ -29,67 +29,76 @@ export default function DoctorCard({
   website,
 }: DoctorCardProps) {
   return (
-    <Card className='w-full max-w-xs mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-lg transition-all duration-300'>
-      {/* Header with Doctor Image */}
-      <CardHeader className='flex flex-col items-center space-y-4 py-6'>
-        <Image
-          src={image}
-          alt={name}
-          width={120}
-          height={120}
-          className='rounded-full border-4 border-white shadow-lg h-[150px]'
-        />
-        <div className='text-center'>
-          <CardTitle className='text-xl font-semibold text-gray-900 dark:text-white'>
-            {name}
-          </CardTitle>
-          <CardDescription className='text-sm text-gray-600 dark:text-gray-300'>
-            {clinic}
-          </CardDescription>
+    <div className='w-full max-w-sm bg-white border border-slate-200 rounded-lg shadow dark:bg-slate-800 dark:border-slate-700'>
+      <div className='flex justify-end px-4 pt-4'>
+        <button
+          id='dropdownButton'
+          data-dropdown-toggle='dropdown'
+          className='inline-block text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-1.5'
+          type='button'
+        >
+          <span className='sr-only'>Open dropdown</span>
+          <svg
+            className='w-5 h-5'
+            aria-hidden='true'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='currentColor'
+            viewBox='0 0 16 3'
+          >
+            <path d='M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z' />
+          </svg>
+        </button>
+        <div
+          id='dropdown'
+          className='z-10 hidden text-base list-none bg-white divide-y divide-slate-100 rounded-lg shadow w-44 dark:bg-slate-700'
+        >
+          <ul className='py-2' aria-labelledby='dropdownButton'>
+            <li>
+              <a
+                href='#'
+                className='block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white'
+              >
+                Edit
+              </a>
+            </li>
+            <li>
+              <a
+                href='#'
+                className='block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white'
+              >
+                Export Data
+              </a>
+            </li>
+            <li>
+              <a
+                href='#'
+                className='block px-4 py-2 text-sm text-red-600 hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white'
+              >
+                Delete
+              </a>
+            </li>
+          </ul>
         </div>
-      </CardHeader>
-
-      {/* Main Content Section */}
-      {/* <CardContent className='px-6 py-4 space-y-3'>
-        <p className='text-base text-gray-700 dark:text-gray-300'>
-          <span className='font-semibold'>Specialty:</span> {specialty}
-        </p>
-      </CardContent> */}
-
-      {/* Footer with Icons */}
-      <CardFooter className='flex justify-evenly items-center bg-gray-100 dark:bg-slate-900 py-3'>
-        {/* Favorite Icon */}
-        <Heart size={20} className='text-red-500 cursor-pointer hover:text-red-600' />
-
-        {/* Phone Icon */}
-        <a
-          href={`tel:${contact1}`}
-          aria-label='Call'
-          className='text-blue-500 cursor-pointer hover:text-blue-600'
-        >
-          <Phone size={20} />
-        </a>
-
-        {/* Email Icon */}
-        <a
-          href={`mailto:${email}`}
-          aria-label='Email'
-          className='text-blue-500 cursor-pointer hover:text-blue-600'
-        >
-          <Mail size={20} />
-        </a>
-
-        {/* Website Icon */}
-        <a
-          href={website}
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='Website'
-          className='text-blue-500 cursor-pointer hover:text-blue-600'
-        >
-          <Link size={20} />
-        </a>
-      </CardFooter>
-    </Card>
+      </div>
+      <div className='flex flex-col items-center pb-10'>
+        <img className='w-24 h-24 mb-3 rounded-full shadow-lg' src={image} alt={name} />
+        <h5 className='mb-1 text-xl font-medium text-slate-900 dark:text-white'>{name}</h5>
+        <span className='text-sm text-slate-500 dark:text-slate-400'>{`${clinic} - ${specialty}`}</span>
+        <div className='flex mt-4 md:mt-6'>
+          <a
+            href='#'
+            className='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+          >
+            View Profile
+          </a>
+          <a
+            href='#'
+            className='py-2 px-4 ms-2 text-sm font-medium text-slate-900 focus:outline-none bg-white rounded-lg border border-slate-200 hover:bg-slate-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-slate-100 dark:focus:ring-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-600 dark:hover:text-white dark:hover:bg-slate-700'
+          >
+            Message
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
