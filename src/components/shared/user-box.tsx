@@ -46,9 +46,14 @@ const UserBox = () => {
 
           <DropdownMenuSeparator />
           <div>
+            <Link href={'/dashboard'}>
+              <DropdownMenuItem asChild className='w-full cursor-pointer text-muted-foreground'>
+                <div role='button'>Dashboard</div>
+              </DropdownMenuItem>
+            </Link>
             <Link href={'/settings'}>
               <DropdownMenuItem asChild className='w-full cursor-pointer text-muted-foreground'>
-                <div role='button'>Account</div>
+                <div role='button'>Settings</div>
               </DropdownMenuItem>
             </Link>
             <DropdownMenuItem

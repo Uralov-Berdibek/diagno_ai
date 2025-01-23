@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = () => {
   return (
-    <div className='sticky top-0 -ml-0.5 pointer-events-none'>
+    <div className='sticky top-0 -ml-0.5 pointer-events-none mt-16'>
       <div className='h-10 bg-white dark:bg-slate-900'></div>
       <div className='bg-white dark:bg-slate-900 relative pointer-events-auto'>
         <button

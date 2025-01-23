@@ -2,7 +2,7 @@ import React from 'react';
 
 const Comunity = () => {
   return (
-    <div className='lg:pl-[21rem] pr-5'>
+    <div className='lg:pl-[21rem] pr-5 mt-24'>
       <main className='max-w-3xl mx-auto relative z-20 pt-10 xl:max-w-none pl-5 md:px-0'>
         <div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md bg-gray-100 dark:bg-slate-900/50 rounded-md'>
           <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-slate-900 dark:text-white'>

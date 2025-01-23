@@ -42,7 +42,7 @@ const DoctorsPage = () => {
   });
 
   return (
-    <div className='p-4 lg:pl-[21rem] pr-6'>
+    <div className='p-4 lg:pl-[21rem] pr-6 mt-28'>
       {/* Top Section */}
       <div className='mb-6'>
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
