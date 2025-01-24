@@ -16,7 +16,7 @@ export default function SiteFooter() {
           </section>
 
           <p className='text-balance text-center text-sm leading-loose text-muted-foreground md:text-left'>
-            ©️ 2024 Spectron Labs, All rights reserved. Built by{' '}
+            ©️ 2024 Diagno AI, All rights reserved. Built by{' '}
             <a
               href={''}
               target='_blank'

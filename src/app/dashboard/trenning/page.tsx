@@ -86,7 +86,7 @@ const TrenningPage: React.FC = () => {
   }, [searchQuery, selectedCategory, minRating, showFavorites, videos]);
 
   return (
-    <div className='lg:pl-[21rem] px-5 py-4 mt-28'>
+    <div className='lg:pl-[21rem] px-5 py-4 mt-4'>
       <h1 className='text-2xl font-bold mb-4'>Training Videos</h1>
 
       {/* Filters */}

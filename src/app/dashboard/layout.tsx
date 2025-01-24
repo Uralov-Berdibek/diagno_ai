@@ -10,15 +10,17 @@ import Info from '../../components/shared/info';
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className='w-full min-h-[100vh] bg-white dark:bg-slate-800 text-slate-900 dark:text-white pb-8'>
-      <Info />
-      <Header />
-      <HeaderMobile />
-      <SearchModal />
-      <div>
-        <Sidebar />
-        <MobileSidebar />
-        {children}
+      <div className='relative top-[44px]'>
+        <Header />
+        <HeaderMobile />
+        <SearchModal />
+        <div>
+          <Sidebar />
+          <MobileSidebar />
+          {children}
+        </div>
       </div>
+      <Info />
       <Toaster position='top-center' richColors />
     </div>
   );

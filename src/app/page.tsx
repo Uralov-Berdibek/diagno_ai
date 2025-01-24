@@ -11,7 +11,7 @@ export default function Home() {
     <div className='w-[1440px] max-w-[100%] mx-auto'>
       <SiteHeader />
       <HeroSection />
-      {/* <LogoTicker /> */}
+      <LogoTicker />
       <Features />
       <Testimonials />
       <CallToAction />

@@ -29,7 +29,7 @@ const NewChatPage = ({ params }: { params: Promise<{ slag: string }> }) => {
   };
 
   return (
-    <div className='lg:pl-[21rem] pr-6 mt-24'>
+    <div className='lg:pl-[21rem] pr-6'>
       <div className='max-w-3xl mx-auto relative z-20 pt-10 xl:max-w-none'>
         <SendMessages onSend={handleSendMessage} />
         {messageSent && (
