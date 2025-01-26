@@ -16,16 +16,16 @@ type Props = {};
 export const navItems = [
   {
     name: 'Dashboard',
-    href: '/dashboard', // Full path
+    href: '/dashboard',
     icon: <DocumentationIcon />,
   },
   {
     name: 'Chat Sahifalar',
-    href: '/dashboard/files', // Full path
+    href: '/dashboard/files',
     icon: <CubeIcon />,
   },
-  { name: 'Shifokorlar', href: '/dashboard/doctors', icon: <TemplatesIcon /> }, // Full path
-  { name: 'Ta’lim', href: '/dashboard/trenning', icon: <ScreencastsIcon /> },
+  { name: 'Shifokorlar', href: '/doctors/', icon: <TemplatesIcon /> },
+  { name: 'Ta’lim', href: '/trenning/', icon: <ScreencastsIcon /> },
   { name: 'Manbalar', href: '/dashboard/resources', icon: <ResourcesIcon /> },
   { name: 'Muloqot', href: '/dashboard/comunity', icon: <ComunityIcon /> },
 ];

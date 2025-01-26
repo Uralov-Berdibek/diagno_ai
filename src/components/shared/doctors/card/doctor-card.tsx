@@ -1,88 +1,79 @@
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface DoctorCardProps {
   name: string;
   clinic: string;
   specialty: string;
   image: string;
+  slug: number;
+  isLiked: boolean; // Indicates if the doctor is liked
+  toggleLike: () => void; // Function to toggle the like state
 }
 
-export default function DoctorCard({ name, clinic, specialty, image }: DoctorCardProps) {
+export default function DoctorCard({
+  name,
+  clinic,
+  specialty,
+  image,
+  slug,
+  isLiked,
+  toggleLike,
+}: DoctorCardProps) {
   return (
     <div className='w-full max-w-sm bg-white border border-slate-200 rounded-lg shadow dark:bg-slate-800 dark:border-slate-700'>
       <div className='flex justify-end px-4 pt-4'>
         <button
-          id='dropdownButton'
-          data-dropdown-toggle='dropdown'
+          id='likeButton'
           className='inline-block text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-1.5'
           type='button'
+          onClick={toggleLike}
         >
-          <span className='sr-only'>Open dropdown</span>
+          <span className='sr-only'>Like</span>
           <svg
-            className='w-5 h-5'
+            className={`w-6 h-6 ${isLiked ? 'text-red-500' : 'text-gray-800 dark:text-white'} ${
+              isLiked ? 'opacity-100' : 'opacity-10'
+            }`}
             aria-hidden='true'
             xmlns='http://www.w3.org/2000/svg'
-            fill='currentColor'
-            viewBox='0 0 16 3'
+            width='24'
+            height='24'
+            fill='none'
+            viewBox='0 0 24 24'
           >
-            <path d='M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z' />
+            <path
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              d='M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z'
+            />
           </svg>
         </button>
-        <div
-          id='dropdown'
-          className='z-10 hidden text-base list-none bg-white divide-y divide-slate-100 rounded-lg shadow w-44 dark:bg-slate-700'
-        >
-          <ul className='py-2' aria-labelledby='dropdownButton'>
-            <li>
-              <a
-                href='#'
-                className='block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white'
-              >
-                Edit
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className='block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white'
-              >
-                Export Data
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className='block px-4 py-2 text-sm text-red-600 hover:bg-slate-100 dark:hover:bg-slate-600 dark:text-slate-200 dark:hover:text-white'
-              >
-                Delete
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
       <div className='flex flex-col items-center pb-10'>
-        {/* <Image> komponenti ishlatildi */}
         <Image
-          className='w-24 h-24 mb-3 rounded-full shadow-lg'
+          className='w-40 h-48 mb-3 rounded-md'
           src={image}
           alt={name}
-          width={96} // kenglik (px)
-          height={96} // balandlik (px)
+          width={96}
+          height={96}
         />
         <h5 className='mb-1 text-xl font-medium text-slate-900 dark:text-white'>{name}</h5>
         <span className='text-sm text-slate-500 dark:text-slate-400'>{`${clinic} - ${specialty}`}</span>
         <div className='flex mt-4 md:mt-6'>
-          <a
-            href='#'
+          <Link
+            href={`doctors/${slug}`}
             className='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
           >
-            View Profile
-          </a>
+            Profilni ko&#39;rish
+          </Link>
           <a
             href='#'
             className='py-2 px-4 ms-2 text-sm font-medium text-slate-900 focus:outline-none bg-white rounded-lg border border-slate-200 hover:bg-slate-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-slate-100 dark:focus:ring-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-600 dark:hover:text-white dark:hover:bg-slate-700'
           >
-            Message
+            Bo&#39;g&#39;lanish
           </a>
         </div>
       </div>
