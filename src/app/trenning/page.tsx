@@ -78,10 +78,9 @@ const TrenningPage: React.FC = () => {
       {/* Filters */}
       <div className='mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'></div>
 
-      {/* Video List */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         {filteredVideos.map((video) => (
-          <Link href={`trenning/${video.id}`}>
+          <Link href={`trenning/${video.id}`} key={video.id}>
             <li className='relative flex flex-col sm:flex-row xl:flex-col items-start bg-slate-50 dark:bg-slate-700/15 p-2 rounded-lg'>
               <div className='order-1 sm:ml-6 xl:ml-0'>
                 <h3 className='mb-1 text-slate-900 font-semibold dark:text-slate-200'>
