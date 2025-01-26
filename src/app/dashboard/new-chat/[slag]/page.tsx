@@ -43,6 +43,7 @@ const NewChatPage = ({ params }: { params: Promise<{ slag: string }> }) => {
               {doctors.slice(4).map((doctor) => (
                 <DoctorCard
                   key={doctor.id}
+                  slug={doctor.id}
                   name={doctor.name}
                   clinic={doctor.clinic}
                   specialty={doctor.specialty}

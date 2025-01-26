@@ -103,8 +103,6 @@ const DoctorsPage = () => {
             clinic={doctor.clinic}
             specialty={doctor.specialty}
             image={doctor.profileImage}
-            isLiked={likedDoctors.includes(doctor.id)}
-            toggleLike={() => toggleLike(doctor.id)}
           />
         ))}
       </div>

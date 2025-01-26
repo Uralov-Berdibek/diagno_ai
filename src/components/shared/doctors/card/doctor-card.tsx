@@ -8,19 +8,9 @@ interface DoctorCardProps {
   specialty: string;
   image: string;
   slug: number;
-  isLiked: boolean; // Indicates if the doctor is liked
-  toggleLike: () => void; // Function to toggle the like state
 }
 
-export default function DoctorCard({
-  name,
-  clinic,
-  specialty,
-  image,
-  slug,
-  isLiked,
-  toggleLike,
-}: DoctorCardProps) {
+export default function DoctorCard({ name, clinic, specialty, image, slug }: DoctorCardProps) {
   return (
     <div className='w-full max-w-sm bg-white border border-slate-200 rounded-lg shadow dark:bg-slate-800 dark:border-slate-700'>
       <div className='flex justify-end px-4 pt-4'>
@@ -28,13 +18,10 @@ export default function DoctorCard({
           id='likeButton'
           className='inline-block text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-1.5'
           type='button'
-          onClick={toggleLike}
         >
           <span className='sr-only'>Like</span>
           <svg
-            className={`w-6 h-6 ${isLiked ? 'text-red-500' : 'text-gray-800 dark:text-white'} ${
-              isLiked ? 'opacity-100' : 'opacity-10'
-            }`}
+            className={`w-6 h-6 opacity-10`}
             aria-hidden='true'
             xmlns='http://www.w3.org/2000/svg'
             width='24'
