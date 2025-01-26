@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/shared/header';
 import HeaderMobile from '../../components/shared/header/header-mobile';
 import Info from '../../components/shared/info';
+import MobileSidebar from '../../components/shared/sidebar/mobile-sidebar';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -9,6 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <Info />
       <Header />
       <HeaderMobile />
+      <MobileSidebar />
       <div className='container mx-auto'>{children}</div>
     </div>
   );

@@ -167,7 +167,6 @@ const Header = (props: Props) => {
                 ></path>
               </svg>
             </li>
-            <li className='font-semibold text-slate-900 truncate dark:text-slate-200'>Dashboard</li>
           </ol>
         </div>
       </div>
