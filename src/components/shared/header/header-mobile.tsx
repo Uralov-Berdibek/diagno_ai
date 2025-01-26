@@ -4,8 +4,12 @@ import React, { useCallback } from 'react';
 import useHeaderbarMobile from '../../../hooks/useHeaderMobile';
 import clsx from 'clsx';
 import { ModeToggle } from '../mode-toggle';
+import { useUser } from '@clerk/nextjs';
+import UserBox from '../user-box';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 const HeaderMobile = () => {
+  const { user } = useUser();
   const headerbarMobile = useHeaderbarMobile();
 
   const onCloseHeaderbarMobile = useCallback(() => {
@@ -32,6 +36,16 @@ const HeaderMobile = () => {
               ></path>
             </svg>
           </button>
+
+          <div className='w-[25px] ml-5'>
+            {user?.id ? (
+              <UserBox />
+            ) : (
+              <Avatar className='cursor-pointer'>
+                <AvatarFallback>SB</AvatarFallback>
+              </Avatar>
+            )}
+          </div>
           <div className='mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10'>
             <div className='flex items-center justify-between'>
               <label htmlFor='theme' className='text-slate-700 font-normal dark:text-slate-400'>
