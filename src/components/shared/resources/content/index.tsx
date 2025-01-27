@@ -36,7 +36,7 @@ const Content = () => {
   return (
     <section>
       <h2 className='mb-2 text-2xl leading-7 tracking-tight text-slate-900 font-bold dark:text-slate-200'>
-        So&#39;nggi Yangiliklar va Bloglar"
+        So&#39;nggi Yangiliklar va Bloglar
       </h2>
       <div className='mb-10 prose prose-slate text-slate-600 max-w-3xl dark:prose-dark'>
         <p>
