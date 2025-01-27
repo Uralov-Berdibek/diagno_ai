@@ -7,7 +7,7 @@ const ResourcesHeader = () => {
         Manbalar
       </p>
       <h1 className='mb-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200'>
-        Tahlil va qarorlar asosida foydalanilgan manbalarning to&#39;liq ro'yxati.
+        Tahlil va qarorlar asosida foydalanilgan manbalarning to&#39;liq ro&#39;yxati.
       </h1>
       <p className='text-lg text-slate-700 dark:text-slate-400 text-justify'>
         Ushbu sahifada AI tomonidan tahlil va diagnostika jarayonlarida ishlatilgan ma&#39;lumotlar
