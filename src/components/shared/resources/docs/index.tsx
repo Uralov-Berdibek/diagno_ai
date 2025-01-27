@@ -30,11 +30,11 @@ const Docs = () => {
   return (
     <section className='relative'>
       <h2 className='text-slate-900 text-xl font-bold mb-3 dark:text-slate-200 ml-4 tracking-wider'>
-        Shaxsiy sogliqni tahlil paneli
+        Shaxsiy sog&#39;liqni tahlil paneli
       </h2>
       <div className='mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark ml-4'>
         <p>
-          AI yordamida tibbiy natijalar va yozuvlarni tahlil qilib, siz va oilangizning sogligi
+          AI yordamida tibbiy natijalar va yozuvlarni tahlil qilib, siz va oilangizning sog&#39;ligi
           haqida chuqur tushuncha hosil qiling.
         </p>
       </div>
