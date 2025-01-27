@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               className='w-full xl:h-[20rem] lg:h-[22rem] md:h-[16rem] sm:h-[13rem] xs:h-[9.5rem]'
             />
 
-            <div className='w-full mx-auto flex justify-center'>
+            <div className='w-44 h-44 sm:h-auto -mt-24 sm:mt-0 sm:w-full mx-auto flex justify-center'>
               <img
                 src='https://images.unsplash.com/photo-1463453091185-61582044d556?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMnx8cGVvcGxlfGVufDB8MHx8fDE3MTA0ODExOTN8MA&ixlib=rb-4.0.3&q=80&w=1080'
                 alt='User Profile'
@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               <h1 className='text-center text-gray-800 dark:text-white text-4xl font-serif'>
                 Samuel Abera
               </h1>
-              <p className='w-full text-gray-700 dark:text-gray-400 text-md text-pretty sm:text-center xs:text-justify'>
+              <p className='pl-2 md:pl-0 w-full text-gray-700 dark:text-gray-400 text-md text-pretty sm:text-center xs:text-justify'>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis labore
                 consectetur voluptatibus mollitia dolorem veniam omnis ut quibusdam minima sapiente
                 repellendus asperiores explicabo, eligendi odit, dolore similique fugiat dolor,
@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 incidunt excepturi, possimus odit praesentium?
               </p>
 
-              <div className='mt-10'>
+              <div className='my-10 pl-6 sm:pl-0'>
                 <h1 className='flex items-center text-xl font-extrabold dark:text-white'>
                   Tajriba va
                   <span className='bg-blue-100 text-blue-800 text-lg font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-2'>
