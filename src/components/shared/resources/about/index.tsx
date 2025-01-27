@@ -6,8 +6,8 @@ const aboutItems = [
     title: 'Tibbiy Diagnostika',
     subtitle: "Tibbiy Ma'lumotlar Bilan Tahlil.",
     description: [
-      "AI tahlil jarayonida ishlatilgan tibbiy diagnostika ma'lumotlari bilan tanishing. Ushbu ma'lumotlar sog‘liqni saqlash sohasidagi ilg‘or qarorlarni qabul qilish uchun asos bo‘ladi",
-      "Tibbiy diagnostika va sog‘liqni saqlash uchun mo‘ljallangan ma'lumotlar to‘plami. Kasalliklarni aniqlash va davolash jarayonlarini takomillashtirishga yordam beradi.",
+      "AI tahlil jarayonida ishlatilgan tibbiy diagnostika ma'lumotlari bilan tanishing. Ushbu ma'lumotlar sog'liqni saqlash sohasidagi ilg'or qarorlarni qabul qilish uchun asos bo'ladi",
+      "Tibbiy diagnostika va sog'liqni saqlash uchun mo'ljallangan ma'lumotlar to'plami. Kasalliklarni aniqlash va davolash jarayonlarini takomillashtirishga yordam beradi.",
     ],
     link: '#',
     imageUrl: 'https://miro.medium.com/v2/resize:fit:720/1*0KHwf5IFEwJ8l0HEnc1hAg.jpeg',
@@ -17,7 +17,7 @@ const aboutItems = [
     title: 'AI Tavsiyalar',
     subtitle: 'Kasalliklar va Davolash',
     description: [
-      "AI tomonidan ishlatiladigan kasalliklar va davolash bo‘yicha ma'lumotlar to‘plami. Kasalliklar diagnostikasi va davolash jarayonini osonlashtiradi.",
+      "AI tomonidan ishlatiladigan kasalliklar va davolash bo'yicha ma'lumotlar to'plami. Kasalliklar diagnostikasi va davolash jarayonini osonlashtiradi.",
       "Kasalliklar haqida batafsil ma'lumot va davolash usullari AI diagnostikasi uchun muhim manba sifatida keltirilgan.",
     ],
     link: '#',

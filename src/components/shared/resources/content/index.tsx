@@ -15,7 +15,7 @@ const contentItems = [
     title: "AI Ma'lumotlari",
     subtitle: "AI diagnostikasi: Ma'lumotlar bazasi yangilanishi.",
     description:
-      "AI ma'lumotlar bazasiga yangi kasalliklar va ularning davolash usullari qo‘shildi. Bu yangilanish diagnostika imkoniyatlarini yanada kengaytiradi.",
+      "AI ma'lumotlar bazasiga yangi kasalliklar va ularning davolash usullari qo'shildi. Bu yangilanish diagnostika imkoniyatlarini yanada kengaytiradi.",
     link: 'https://heroicons.com',
     image: 'https://miro.medium.com/v2/resize:fit:720/1*0KHwf5IFEwJ8l0HEnc1hAg.jpeg',
     tag: 'Heroicons',
@@ -23,9 +23,9 @@ const contentItems = [
   },
   {
     title: "Sog'liqni Saqlash",
-    subtitle: 'Tibbiyotda AI: Sog‘liqni Saqlashda Tahlil Yutuqlari',
+    subtitle: "Tibbiyotda AI: Sog'liqni Saqlashda Tahlil Yutuqlari",
     description:
-      'AI tahlil texnologiyalari sog‘liqni saqlash sohasida innovatsion natijalarga erishish imkonini beradi. Diagnostika jarayonlari endi tezroq va aniqroq.',
+      "AI tahlil texnologiyalari sog'liqni saqlash sohasida innovatsion natijalarga erishish imkonini beradi. Diagnostika jarayonlari endi tezroq va aniqroq.",
     link: 'https://heropatterns.com',
     image: 'https://miro.medium.com/v2/resize:fit:720/1*0KHwf5IFEwJ8l0HEnc1hAg.jpeg',
     tag: 'Hero Patterns',
