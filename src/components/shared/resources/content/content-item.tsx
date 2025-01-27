@@ -33,7 +33,7 @@ const ContentItem: React.FC<ContentItemProps> = ({
           className='group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 focus:ring-slate-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 mt-6'
           href={link}
         >
-          Learn more
+          Batafsil ma&#39;lumot
           <span className='sr-only'>, {subtitle}</span>
           <svg
             className='overflow-visible ml-3 text-slate-300 group-hover:text-slate-400 dark:text-slate-500 dark:group-hover:text-slate-400'

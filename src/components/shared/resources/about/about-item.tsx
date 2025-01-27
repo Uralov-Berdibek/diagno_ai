@@ -34,7 +34,7 @@ const AboutItem: React.FC<AboutItemProps> = ({
           className='group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-slate-700 text-white hover:bg-slate-800 focus:ring-offset-2 focus:ring-offset-slate-50 focus:ring-slate-400 dark:focus:ring-offset-0 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500'
           href={link}
         >
-          Learn more<span className='sr-only'>, {title}</span>
+          Batafsil ma&#39;lumot<span className='sr-only'>, {title}</span>
           <svg
             className='overflow-visible ml-3 text-slate-300 group-hover:text-slate-200 dark:text-slate-500 dark:group-hover:text-slate-400'
             width='3'
